@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useEffect, useMemo, useState } from "react";
 
 interface Staff {
   id: number;
@@ -13,6 +13,10 @@ export default function OurTeamPage() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const teamSectionRef = useRef<HTMLDivElement | null>(null);
+  const itemsPerPage = 12;
+  const handlePrev = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
+  const handleNext = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 
   const staffData: Staff[] = [
     { id: 1, 
@@ -137,11 +141,21 @@ export default function OurTeamPage() {
     },
   ];
 
-  const filteredStaff = staffData.filter((staff) => {
-    const matchesName = staff.name.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = filter === "all" || staff.category === filter;
-    return matchesName && matchesCategory;
-  });
+  const filteredStaff = useMemo(() => {
+    return staffData.filter((staff) => {
+      const matchesName = staff.name.toLowerCase().includes(search.toLowerCase());
+      const matchesCategory = filter === "all" || staff.category === filter;
+      return matchesName && matchesCategory;
+    });
+  }, [search, filter]);
+
+  const totalPages = Math.ceil(filteredStaff.length / itemsPerPage);
+
+  useEffect(() => {
+    if (teamSectionRef.current) {
+      teamSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentPage]);
 
   return (
     <main className="min-h-screen bg-[var(--cream)] text-[var(--black)] font-[var(--font-playfair)]">
@@ -196,7 +210,7 @@ export default function OurTeamPage() {
               <img
                 src="/images/Pizza.gif"
                 alt="Our Team GIF"
-                className="w-200 h-130 object-cover opacity-10 hover:opacity-100 transition-opacity duration-500"
+                className="w-200 h-130 object-cover opacity-15 hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -266,33 +280,31 @@ export default function OurTeamPage() {
           {/* Page Staff Button */}
           <div className="flex justify-center items-center gap-6 mt-10">
             <button
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              onClick={handlePrev}
               disabled={currentPage === 1}
-              className={`px-6 py-3 rounded-full text-[var(--white)] bg-[var(--green-dark)] hover:bg-[var(--green)] transition duration-300 ${
-                currentPage === 1 ? 'opacity-40 cursor-not-allowed' : ''
+              className={`text-[var(--green-dark)] px-5 py-2 rounded-full border border-[var(--green-dark)] font-semibold transition ${
+                currentPage === 1 
+                  ? 'opacity-50 cursor-not-allowed' 
+                  : 'hover:bg-[var(--green-dark)] hover:text-[var(--white)]'
               }`}
             >
-              &lt;
+              ← Previous
             </button>
 
             <span className="text-lg text-[var(--gray-dark)] font-medium tracking-widest">
-              Page {currentPage} of {Math.ceil(filteredStaff.length / 12)}
+              Page {currentPage} of {totalPages}
             </span>
 
             <button
-              onClick={() =>
-                setCurrentPage((prev) =>
-                  prev < Math.ceil(filteredStaff.length / 12) ? prev + 1 : prev
-                )
-              }
-              disabled={currentPage === Math.ceil(filteredStaff.length / 12)}
-              className={`px-6 py-3 rounded-full text-[var(--white)] bg-[var(--green-dark)] hover:bg-[var(--green)] transition duration-300 ${
-                currentPage === Math.ceil(filteredStaff.length / 12)
-                  ? 'opacity-40 cursor-not-allowed'
-                  : ''
+              onClick={handleNext}
+              disabled={currentPage === totalPages}
+              className={`text-[var(--green-dark)] px-5 py-2 rounded-full border border-[var(--green-dark)] font-semibold transition ${
+                currentPage === totalPages
+                  ? 'opacity-50 cursor-not-allowed'
+                  : 'hover:bg-[var(--green-dark)] hover:text-[var(--cream)]'
               }`}
             >
-              &gt;
+              Next →
             </button>
           </div>
         </section>
