@@ -14,7 +14,7 @@ export default function OurTeamPage() {
   const [filter, setFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const teamSectionRef = useRef<HTMLDivElement | null>(null);
-  const itemsPerPage = 12;
+  const itemsPerPage = 8;
   const handlePrev = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
   const handleNext = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 
@@ -158,12 +158,12 @@ export default function OurTeamPage() {
   }, [currentPage]);
 
   return (
-    <main className="min-h-screen bg-[var(--cream)] text-[var(--black)] font-[var(--font-playfair)]">
+    <main className="min-h-500 bg-[var(--cream)] text-[var(--black)] font-playfair">
       
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+      <section className="relative h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--red-dark)]/70 to-[var(--black)]/50"/>
-            <h1 className="relative text-6xl md:text-7xl font-bold tracking-widest text-center font-[var(--font-playfair)] animate-fadeIn">
+            <h1 className="relative text-5xl font-bold tracking-widest text-center font-playfair animate-fadeIn">
                 Our Team, Our Heart
             </h1>
       </section>
@@ -187,11 +187,11 @@ export default function OurTeamPage() {
         <div className="relative z-10 max-w-10xl mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-3 items-center">
           {/* Text (Left) */}
           <div>
-            <h2 className="text-2xl md:text-5xl tracking-widest text-[var(--cream)] pb-2 animate-fadeIn">
+            <h2 className="mt-15 text-4xl tracking-widest text-[var(--cream)] pb-2 animate-fadeIn">
               The Soul of Notte Azzura
             </h2>
             <div className="border-b border-[var(--cream)] mt-3"></div>
-            <p className="mt-6 text-lg md:text-xl text-[var(--cream)] leading-relaxed animate-fadeIn">
+            <p className="mt-6 mb-15 text-md text-[var(--cream)] leading-relaxed animate-fadeIn">
               A passionate team united by a love for authentic Italian cuisine. From our talented chefs who craft
               timeless recipes with the finest ingredients to our dedicated staff who make every guest feel truly
               welcome — each member of Team Notte Azzura plays a vital role in creating an unforgettable dining
@@ -205,12 +205,12 @@ export default function OurTeamPage() {
           </div>
 
           {/* GIF (Right) */}
-          <div className="flex justify-center md:justify-end animate-fadeIn">
+          <div className="flex justify-end animate-fadeIn">
             <div className="rounded-4xl overflow-hidden shadow-lg">
               <img
                 src="/images/Pizza.gif"
                 alt="Our Team GIF"
-                className="w-200 h-130 object-cover opacity-15 hover:opacity-100 transition-opacity duration-500"
+                className="w-130 h-100 object-cover opacity-15 hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -221,30 +221,30 @@ export default function OurTeamPage() {
       <section className="relative w-full h-[15vh] mx-auto bg-[var(--red-dark)] flex items-center justify-center bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--cream)]"></section>
 
       {/* Our Team Today */}
-      <section className="max-w-screen-2xl mx-auto mt-16 px-6 md:px-16">
-        <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] text-center animate-fadeIn">
+      <section ref={teamSectionRef} className="max-w-screen-2xl mx-auto mt-16 px-6 md:px-16">
+        <h2 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] text-center animate-fadeIn">
           Our Team Today
         </h2>
-        <p className="mt-2 text-center text-lg italic text-[var(--gray-dark)] tracking-widest animate-fadeIn">
+        <p className="mt-2 text-center text-md italic text-[var(--gray-dark)] tracking-widest animate-fadeIn">
           — fresh from our kitchen to your table —
         </p>
-        <p className="mt-2 text-center text-lg md:text-1xl text-[var(--gray-dark)] animate-fadeIn">
+        <p className="mt-2 text-center text-md text-[var(--gray-dark)] animate-fadeIn">
           Meet the passionate individuals who make Notte Azzura a special place
         </p>
 
         {/* Search & Filter */}
-        <div className="mt-6 flex flex-col md:flex-row justify-center items-center gap-4">
+        <div className="mt-6 flex flex-row justify-center items-center gap-4">
           <input
             type="text"
             placeholder="Search our staff by name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full md:w-1/3 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
+            className="w-1/4 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
           />
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="w-full md:w-1/3 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
+            className="w-1/4 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
           >
             <option value="all">All Staff</option>
             <option value="kitchen">Kitchen Staff</option>
@@ -256,9 +256,9 @@ export default function OurTeamPage() {
         {/* Staff */}
         <section className="mt-12">
           {/* Staff (Grid) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 animate-fadeIn">
+          <div className="grid grid-cols-4 gap-10 animate-fadeIn">
             {filteredStaff
-              .slice((currentPage - 1) * 12, currentPage * 12)
+              .slice((currentPage - 1) * 8, currentPage * 8)
               .map((staff) => (
                 <div
                   key={staff.id}
@@ -267,9 +267,9 @@ export default function OurTeamPage() {
                   <img
                     src={staff.image}
                     alt={staff.name}
-                    className="w-full h-64 object-cover rounded-2xl mb-6"
+                    className="w-full object-cover rounded-2xl mb-6"
                   />
-                  <h3 className="text-2xl font-[var(--font-playfair)] font-semibold text-[var(--green-dark)] mb-2">
+                  <h3 className="text-2xl font-playfair font-semibold text-[var(--green-dark)] mb-2">
                     {staff.name}
                   </h3>
                   <p className="text-[var(--gray-dark)] text-lg">{staff.role}</p>
@@ -325,12 +325,12 @@ export default function OurTeamPage() {
         <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Text */}
-        <div className="relative z-10 max-w-screen-2xl mx-auto">
+        <div className="relative z-10 max-w-250 mx-auto">
           <div className="bg-[var(--green-dark)]/90 text-[var(--white)] shadow-4xl p-12 text-center rounded-3xl opacity-80">
-            <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-semibold mb-6 tracking-widest animate-fadeIn">
+            <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 tracking-widest animate-fadeIn">
               — Thank You to Our Team —
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed animate-fadeIn">
+            <p className="text-md leading-relaxed animate-fadeIn">
               We sincerely thank our incredible team for their dedication, passion, and hard work. Your commitment and teamwork have been essential in bringing the spirit of Notte Azzura to life. Each of you brings something special — from creativity in the kitchen to warmth in our service — and together, you make Notte Azzura more than just a restaurant. We are truly grateful for everything you do every day.
             </p>
           </div>
@@ -343,18 +343,18 @@ export default function OurTeamPage() {
       {/* Join Our Team Section */}
       <section className="bg-[var(--cream)] py-24 px-6 flex flex-col items-center justify-center text-center text-[var(--red-dark)]">
         <div className="max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold mb-2 animate-fadeIn">
+          <h2 className="text-4xl md:text-5xl font-playfair font-semibold mb-2 animate-fadeIn">
             Want to Join the Notte Azzura Family?
           </h2>
-          <p className="text-center text-lg md:text-1xl text-[var(--green-dark)] tracking-widest italic animate-fadeIn">
+          <p className="text-center text-md text-[var(--green-dark)] tracking-widest italic animate-fadeIn">
             — We welcome all who share our passion for hospitality and authentic Italian cuisine! —
           </p>
-          <p className="text-lg md:text-xl text-[var(--gray-dark)] leading-relaxed mb-10 mt-6 animate-fadeIn">
+          <p className="text-xl text-[var(--gray-dark)] leading-relaxed mb-10 mt-6 animate-fadeIn">
             We’re always looking for passionate individuals who share our love for authentic Italian cuisine.
             Become a part of a team where every day is filled with flavor, creativity, and warmth.
           </p>
           <a
-            href="/contact"
+            href="/contact" //Kathleen tolong link ke page u yaa
             className="inline-flex items-center gap-3 bg-[var(--green-dark)] hover:bg-[var(--green)] text-[var(--white)] text-lg md:text-xl font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 animate-fadeIn"
           >
             Contact Us Here!

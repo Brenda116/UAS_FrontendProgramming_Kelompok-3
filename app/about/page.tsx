@@ -2,318 +2,310 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main className="bg-[var(--cream)] text-[var(--red-dark)] min-h-screen font-[var(--font-playfair)]">
-        {/* HERO */}
-        <section className="relative h-[50vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40" />
-                <h1 className="relative text-6xl font-bold tracking-widest text-center animate-fadeIn font-[var(--font-playfair)]">
-                    ABOUT US
-                </h1>
-        </section>
+    <main className="bg-[var(--cream)] text-[var(--red-dark)] min-h-70 font-playfair">
 
-        {/* Our History Card */}
-        <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-screen-2xl h-auto md:h-[700px]">
-            {/* Image */}
-            <div className="w-full md:w-1/2">
-                <img
-                    src="/images/OurHistory.jpg"
-                    alt="Our History"
-                    className="w-full h-full object-cover"
-                />
-            </div>
-        
-            {/* Text */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-                <h2 className="text-5xl md:text-6xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-6 animate-fadeIn">
-                    Our History
-                </h2>
+      {/* Hero */}
+      <section className="relative h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40" />
+        <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center animate-fadeIn">
+          ABOUT US
+        </h1>
+      </section>
 
-                <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify animate-fadeIn">
-                    <p>
-                        Welcome to <strong>Notte Azzura</strong>, an Italian dining haven in the heart of London.
-                        Born from a family’s passion for authentic Italian flavors, our story began with a simple
-                        dream — to bring the warmth and taste of Italy to the city.
-                    </p>
-                    <p>
-                        Since our early days, we’ve been serving hand-tossed pizzas, fresh pastas, and classic dishes
-                        crafted from generations of tradition and the finest ingredients. Each plate is a tribute to
-                        the art of Italian cooking and a celebration of togetherness.
-                    </p>
-                    <p>
-                        Today, Notte Azzura stands as more than just a restaurant — it’s a place where friends gather,
-                        stories are shared, and every meal feels like coming home. Join us for a taste of
-                        <em> la dolce vita</em> — the sweet life, the Italian way.
-                    </p>
-                </div>
+      {/* Our History Card */}
+      <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[520px]">
+        {/* Image */}
+        <div className="w-full md:w-1/2">
+          <img
+            src="/images/OurHistory.jpg"
+            alt="Our History"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-                {/* Tombol */}
-                <Link
-                    href="/about/OurHistory"
-                    className="mt-10 px-8 py-3 bg-[var(--red-dark)] text-[var(--white)] text-lg font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300 animate-fadeIn"
-                    >
-                    Find Out More
-                </Link>
-            </div>
-        </section>
+        {/* Text */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
+            Our History
+          </h2>
 
-        {/* Culinary Philosophy Card */}
-        <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-screen-2xl h-auto md:h-[450px] transition-all duration-500 relative">
-            {/* Text */}
-            <div className="relative w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center overflow-hidden">
-                <div className="transition-opacity duration-500 group-hover:opacity-0">
-                    <h2 className=" text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-6 animate-fadeIn">
-                        Our Culinary Philosophy
-                    </h2>
-            </div>
-
-            {/* Text 01 */}
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify transition-opacity duration-500 group-hover:opacity-0">
-                <p className="text-base text-[var(--green)] italic uppercase tracking-widest animate-fadeIn">
-                    — A Chronicle of Taste, Time, and Tradition —
-                </p>
-                <p className="animate-fadeIn">
-                    At <span className="italic font-semibold">Notte Azzura</span>, every dish begins with a story — 
-                    a story of tradition, patience, and artistry. Our chefs draw inspiration from the heart of Italy, 
-                    where the essence of dining is not only in flavor, but in the love and care poured into every step.
-                </p>
-            </div>
-
-            {/* Text 02 (Hover) */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center px-8 md:px-16 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
-                    The story of <span className="italic font-semibold">Notte Azzura</span> began with a promise — 
-                    to keep the essence of Italian dining alive in a modern world. Our chefs, 
-                    artisans of both flavor and feeling, are devoted to recreating the warmth of 
-                    a true Italian table, where every dish is a conversation and every aroma tells 
-                    a story of heritage and heart.
-                </p>
-                <br />
-                <p className="text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
-                    We carry forward the legacy of generations who believed that good food is 
-                    never rushed. The rhythm of our kitchen follows the same melody as 
-                    the trattorias of Rome and Naples — where sauces bubble slowly, dough rises 
-                    under patient hands, and laughter fills the air. It is a legacy of care, 
-                    of knowing that each plate we serve carries a piece of history.
-                </p>
-            </div>
-            </div>
-
-            {/* Image */}
-            <div className="w-full md:w-1/2">
-                <img
-                    src="/images/Team.jpg"
-                    alt="Leadership Team"
-                    className="w-full h-full object-cover"
-                />
-            </div>
-        </section>
-
-        {/* Sustainability Plans Card */}
-        <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-screen-2xl h-auto md:h-[450px] transition-all duration-500 relative">
-            {/* Image */}
-            <div className="w-full md:w-1/2">
-                <img
-                    src="/images/Sustainability.jpg"
-                    alt="Sustainability Efforts"
-                    className="w-full h-full object-cover"
-                />
-            </div>
-
-            {/* Text */}
-            <div className="relative w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center overflow-hidden">
-                <div className="transition-opacity duration-500 group-hover:opacity-0">
-                    <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-6 animate-fadeIn">
-                        Our Sustainability Plans
-                    </h2>
-            </div>
-
-            {/* Text 01 */}
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify transition-opacity duration-500 group-hover:opacity-0">
-                <p className="text-base text-[var(--green)] italic uppercase tracking-widest animate-fadeIn">
-                    — Preserving Nature, One Plate at a Time —
-                </p>
-                <p className="animate-fadeIn">
-                    At <span className="italic font-semibold">Notte Azzura</span>, sustainability is at the heart of our kitchen. 
-                    From responsible sourcing to reducing food waste, every choice we make reflects 
-                    our promise to protect the Earth while serving authentic Italian cuisine.
-                </p>
-            </div>
-
-            {/* Text 02 */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center px-8 md:px-16 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
-                    Our sustainability journey begins with ingredients — locally sourced produce, 
-                    seasonal selections, and partnerships with eco-conscious suppliers. 
-                    Each ingredient tells a story of respect for nature and the community around us.
-                </p>
-                <br />
-                <p className="text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
-                    From composting organic waste to minimizing plastic usage, 
-                    our mission goes beyond the kitchen. We believe that fine dining can coexist 
-                    with environmental care — creating flavors that are not only delicious, 
-                    but also kind to the planet we call home.
-                </p>
-            </div>
-            </div>
-        </section>
-
-        {/* Divider Hero */}
-        <section className="relative w-full h-[40vh] mx-auto mt-20 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
-            <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[var(--white)] tracking-widest animate-fadeIn">
-                NOTTE AZZURA
-            </h2>
-            <p className="mt-3 text-lg italic text-[var(--cream)] tracking-widest animate-fadeIn delay-200">
-                — mangiare bene è vivere bene —
+          <div className="space-y-3 text-base md:text-md leading-relaxed text-[var(--gray-dark)] max-w-md text-justify animate-fadeIn">
+            <p>
+              Welcome to <strong>Notte Azzura</strong>, an Italian dining haven in the heart of London,
+              born from a family's passion for authentic Italian flavors.
             </p>
-        </section>
-
-        {/* Our Team & Company News Cards */}
-        <section className="max-w-screen-2xl mx-auto my-20 px-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Card 1 - Our Team */}
-            <div className="bg-[var(--white)] rounded-3xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-12">
-                {/* Image */}
-                <img
-                    src="/images/Team02.jpg"
-                    alt="Our Team"
-                    className="w-full h-150 object-cover"
-                />
-                <div className="p-8">
-
-                    {/* Text */}
-                    <h3 className="text-3xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
-                        Notte Azzura's Team
-                    </h3>
-                    <p className="text-[var(--gray-dark)] text-lg leading-relaxed animate-fadeIn">
-                        Meet the talented individuals behind Notte Azzura, each bringing their unique skills and
-                        passion for Italian cuisine to the table.
-                    </p>
-                </div>
-
-                {/* Tombol */}
-                <Link
-                    href="/about/OurTeam"
-                    className="mt-6 px-8 py-3 bg-[var(--red-dark)] text-[var(--white)] text-lg font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300 animate-fadeIn"
-                    >
-                    Find Out More
-                </Link>
-            </div>
-
-            {/* Card 2 - Our Company News */}
-            <div className="bg-[var(--white)] rounded-3xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-12">
-                {/* Image */}
-                <img
-                    src="/images/CompanyNews.jpg" 
-                    alt="Company News"
-                    className="w-full h-150 object-cover"
-                />
-                <div className="p-8">
-            
-                    {/* Text */}
-                    <h3 className="text-3xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
-                        Our Company News
-                    </h3>
-                    <p className="text-[var(--gray-dark)] text-lg leading-relaxed animate-fadeIn">
-                        Stay updated with the latest stories, milestones, and announcements from Notte Azzura
-                        as we continue to grow and innovate.
-                    </p>
-                </div>
-
-                {/* Tombol */}
-                <button className="mt-6 px-8 py-3 bg-[var(--red-dark)] text-[var(--white)] text-lg font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300 animate-fadeIn">
-                    Find Out More
-                </button>
-            </div>
-        </section>
-
-        {/* Our Passions, International Restaurants & Partnerships Cards */}
-        <section className="max-w-screen-2xl mx-auto my-20 px-10 grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Card 1 - Our Passions */}
-        <div className="bg-[var(--white)] rounded-3xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-10">
-            {/* Image */}
-            <img
-                src="/images/Passions.jpg"
-                alt="Passions"
-                className="w-full h-150 object-cover transition-transform duration-500"
-            />
-            <div className="p-8">
-                {/* Text */}
-                <h3 className="text-3xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
-                    Our Passions
-                </h3>
-                <p className="text-[var(--gray-dark)] text-lg leading-relaxed mb-6 animate-fadeIn">
-                    Bringing a dining table to life with great food, great music and great company.
-                    Lifting glasses and spirits. Getting smiles on faces and sauce on t-shirts.
-                    That's what we're all about.
-                </p>
-        
-                {/* Tombol */}
-                <button className="px-8 py-3 bg-[var(--red-dark)] text-[var(--white)] text-lg font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300 animate-fadeIn">
-                    Find Out More
-                </button>
-            </div>
-        </div>
-
-        {/* Card 2 - Our International Restaurants */}
-        <div className="bg-[var(--white)] rounded-3xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-10">
-            {/* Image */}
-            <img
-                src="/images/InternationalRestaurants.jpg"
-                alt="International Restaurants"
-                className="w-full h-150 object-cover transition-transform duration-500"
-            />
-            <div className="p-8">
-                
-                {/* Text */}
-                <h3 className="text-3xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
-                    Our International Restaurants
-                </h3>
-                <p className="text-[var(--gray-dark)] text-lg leading-relaxed mb-6 animate-fadeIn">
-                    All those PizzaExpress favourites you know and love have crossed countries and continents
-                    to be wherever you are.
-                </p>
-
-                {/* Tombol */}
-                <button className="px-8 py-3 bg-[var(--red-dark)] text-[var(--white)] text-lg font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300 animate-fadeIn">
-                    Find Out More
-                </button>
-            </div>
-        </div>
-
-        {/* Card 3 - Our Partnerships */}
-        <div className="bg-[var(--white)] rounded-3xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-10">
-            {/* Image */}
-            <img
-                src="/images/Partnerships.jpg"
-                alt="Partnerships"
-                className="w-full h-150 object-cover transition-transform duration-500"
-            />
-            <div className="p-8">
-
-                {/* Text */}
-                <h3 className="text-3xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
-                    Our Partnerships
-                </h3>
-                <p className="text-[var(--gray-dark)] text-lg leading-relaxed mb-6 animate-fadeIn">
-                    Fill your stomach without emptying your pockets with our money-saving partnership offers.
-                </p>
-
-                {/* Tombol */}
-                <button className="px-8 py-3 bg-[var(--red-dark)] text-[var(--white)] text-lg font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300 animate-fadeIn">
-                    Find Out More
-                </button>
-            </div>
-        </div>
-        </section>
-
-        {/* Divider Hero */}
-        <section className="relative w-full h-[40vh] mx-auto mt-20 flex flex-col items-center justify-center bg-gradient-to-b from-[var(--cream)]/80 to-[var(--red-dark)]/90 text-center">
-            <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-bold text-[var(--white)] tracking-widest animate-fadeIn">
-                NOTTE AZZURA
-            </h2>
-            <p className="mt-3 text-lg italic text-[var(--cream)] tracking-widest animate-fadeIn delay-200">
-                — mangiare bene è vivere bene —
+            <p>
+              Since our early days, we’ve been serving hand-tossed pizzas, pastas, and classic dishes
+              crafted from generations of tradition and the finest ingredients.
             </p>
-        </section>
+            <p>
+              Today, Notte Azzura is more than a restaurant — it’s a place where friends gather,
+              stories are shared, and every meal feels like coming home.
+            </p>
+          </div>
+
+          <Link
+            href="/about/OurHistory"
+            className="mt-6 px-6 py-2 bg-[var(--red-dark)] text-[var(--white)] text-base font-medium rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300"
+          >
+            Find Out More
+          </Link>
+        </div>
+      </section>
+
+      {/* Culinary Philosophy Card */}
+      <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[360px] relative transition-all duration-500">
+
+        {/* Text */}
+        <div className="relative w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 text-center overflow-hidden">
+
+          <div className="transition-opacity duration-500 group-hover:opacity-0">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
+              Our Culinary Philosophy
+            </h2>
+          </div>
+
+          {/* Text 01 */}
+          <div className="space-y-3 md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify transition-opacity duration-500 group-hover:opacity-0">
+            <p className="text-sm text-[var(--green)] italic uppercase tracking-widest animate-fadeIn">
+              — A Chronicle of Taste, Time, and Tradition —
+            </p>
+            <p className="animate-fadeIn text-sm">
+              At <span className="italic font-semibold">Notte Azzura</span>, every dish begins with a story —
+              a story of tradition, patience, and artistry inspired by the heart of Italy.
+            </p>
+          </div>
+
+          {/* Text 02 Hover */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              The story of <span className="italic font-semibold">Notte Azzura</span> began with a promise —
+              to keep the essence of Italian dining alive through warmth, artistry, and heritage.
+            </p>
+            <br />
+            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              Our kitchen follows the traditions of Rome & Naples — slow sauces, rising dough,
+              and heartfelt cooking that carries history with every plate.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Image */}
+        <div className="w-full md:w-1/2">
+          <img
+            src="/images/Team.jpg"
+            alt="Leadership Team"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Sustainability Plans Card */}
+      <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[360px] relative transition-all duration-500">
+
+        {/* Image */}
+        <div className="w-full md:w-1/2">
+          <img
+            src="/images/Sustainability.jpg"
+            alt="Sustainability Efforts"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Text */}
+        <div className="relative w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 text-center overflow-hidden">
+
+          <div className="transition-opacity duration-500 group-hover:opacity-0">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--red-dark)] mb-4 animate-fadeIn">
+              Our Sustainability Plans
+            </h2>
+          </div>
+
+          {/* Text 01 */}
+          <div className="space-y-3 text-base md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify transition-opacity duration-500 group-hover:opacity-0">
+            <p className="text-sm text-[var(--green)] italic uppercase tracking-widest animate-fadeIn">
+              — Preserving Nature, One Plate at a Time —
+            </p>
+            <p className="animate-fadeIn text-sm">
+              At <span className="italic font-semibold">Notte Azzura</span>, sustainability guides every step —
+              from sourcing to reducing waste — as our promise to protect the Earth.
+            </p>
+          </div>
+
+          {/* Text 02 Hover */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              We rely on locally sourced produce and seasonal selections to honor nature and community.
+            </p>
+            <br />
+            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              From composting waste to minimizing plastics, we ensure great food can align with caring for the planet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider Hero */}
+      <section className="relative w-full h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[var(--cream)] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
+      {/* Our Team & Company News */}
+      <section className="max-w-270 mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        {/* Team */}
+        <div className="bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8">
+          <img
+            src="/images/Team02.jpg"
+            alt="Our Team"
+            className="w-full h-96 object-cover"
+          />
+          <div className="p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
+              Notte Azzura's Team
+            </h3>
+            <p className="text-[var(--gray-dark)] md:text-20 leading-relaxed animate-fadeIn">
+              Meet the talented individuals bringing passion and skill to our kitchen and service.
+            </p>
+          </div>
+          <Link
+            href="/about/OurTeam"
+            className="px-6 py-2 bg-[var(--red-dark)] text-[var(--white)] text-base rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300"
+          >
+            Find Out More
+          </Link>
+        </div>
+
+        {/* Company News */}
+        <div className="bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8">
+          <img
+            src="/images/CompanyNews.jpg"
+            alt="Company News"
+            className="w-full h-96 object-cover"
+          />
+          <div className="p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
+              Our Company News
+            </h3>
+            <p className="text-[var(--gray-dark)] md:text-20 leading-relaxed animate-fadeIn">
+              Stay updated with milestones, achievements, and announcements from Notte Azzura.
+            </p>
+          </div>
+          <Link
+            href="/about/OurNews"
+            className="px-6 py-2 bg-[var(--red-dark)] text-[var(--white)] text-base rounded-full shadow-md hover:bg-[var(--red-light)] transition duration-300"
+          >
+            Find Out More
+          </Link>
+        </div>
+
+      </section>
+
+      {/* Our Passions , Our Mission &  Our Vision */}
+      <section className="max-w-270 h-130 mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {/* Our Passions */}
+        <div className="group bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8 relative">
+          <img
+            src="/images/Passions.jpg"
+            alt="Passions"
+            className="w-full h-72 object-cover group-hover:opacity-0 transition-all duration-500"
+          />
+          <div className="p-6 group-hover:opacity-0 transition-all duration-500">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
+              Our Passions
+            </h3>
+            <p className="text-[var(--gray-dark)] text-base md:text-15 leading-relaxed mb-5 animate-fadeIn">
+              Great food, great music, great company. Our passion is to bring this spirit to every experience, 
+              creating a place where warmth, connection, and authentic Italian joy come naturally.            
+            </p>
+          </div>
+
+          {/* Text Hover */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              Our passion is to bring the true Italian spirit to every moment — where great food, warm music, 
+              and genuine company come together effortlessly. We aim to create experiences that feel inviting 
+              and heartfelt, allowing guests to enjoy the simple pleasures of togetherness, authenticity, and 
+              the joy found at every Italian table.    
+            </p>
+          </div>
+        </div>
+
+        {/* Our Vision */}
+        <div className="group bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8 relative">
+          <img
+            src="/images/InternationalRestaurants.jpg"
+            alt="International Restaurants"
+            className="w-full h-72 object-cover group-hover:opacity-0 transition-all duration-500"
+          />
+          <div className="p-6 group-hover:opacity-0 transition-all duration-500">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
+              Our Vision
+            </h3>
+            <p className="text-[var(--gray-dark)] text-base md:text-15 leading-relaxed mb-5 animate-fadeIn">
+              Our mission is to craft authentic Italian experiences through exceptional flavors, heartfelt 
+              hospitality, and a warm atmosphere that brings people together.
+            </p>
+          </div>
+
+          {/* Text Hover */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              We envision Notte Azzura as a space where every guest feels transported into the heart of Italy — 
+              a place where culinary artistry, hospitality, and atmosphere come together in perfect harmony. 
+              Our vision is to create moments that linger in memory, where guests feel connected not only to the 
+              food on their table, but to the story, culture, and passion behind every recipe we share.   
+            </p>
+          </div>
+        </div>
+
+        {/* Our Mission */}
+        <div className="group bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8 relative">
+          <img
+            src="/images/Partnerships.jpg"
+            alt="Partnerships"
+            className="w-full h-72 object-cover group-hover:opacity-0 transition-all duration-500"
+          />
+          <div className="p-6 group-hover:opacity-0 transition-all duration-500">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
+              Our Mission
+            </h3>
+            <p className="text-[var(--gray-dark)] text-base md:text-20 leading-relaxed mb-5 animate-fadeIn">
+              Our mission is to bring authentic Italian culinary artistry to every guest through refined flavors, 
+              warm hospitality, and unforgettable dining experiences.            
+            </p>
+          </div>
+
+          {/* Text Hover */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+              We rely on locally sourced produce and seasonal selections to honor nature and support our 
+              surrounding community. By choosing ingredients that are harvested at their peak, we not only 
+              celebrate freshness and flavor, but also strengthen our connection with local farmers and producers. 
+              Each dish becomes a reflection of the region’s best offerings, crafted with intention and care to 
+              give guests an experience that feels both genuine and thoughtful.            
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <section className="relative w-full h-[50vh] mx-auto mt-16 flex flex-col items-center justify-center bg-gradient-to-b from-[var(--cream)]/80 to-[var(--red-dark)]/90 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[var(--white)] tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[var(--cream)] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
     </main>
   );
 }
