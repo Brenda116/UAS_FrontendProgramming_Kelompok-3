@@ -12,38 +12,43 @@ interface Staff {
 export default function OurHistoryPage() {
 
   return (
-    <main className="min-h-screen bg-[var(--cream)] text-[var(--black)] font-[var(--font-playfair)]">
+    <main className="min-h-70 bg-[var(--cream)] text-[var(--black)] font-playfair">
     
     {/* Hero */}
-    <section className="relative h-[60vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/70 to-[var(--black)]/60" />
-            <h1 className="relative text-6xl md:text-7xl font-bold tracking-widest text-center font-[var(--font-playfair)] animate-fadeIn">
-                Our History
-            </h1>
-    </section>
+      <section className="relative h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40" />
+        <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center animate-fadeIn">
+          OUR HISTORY
+        </h1>
+      </section>
 
     {/* Title Section - The Story Behind Notte Azzura */}
-    <section className="max-w-screen-2xl mx-auto mt-20 px-6 md:px-16">
-        <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] text-right animate-fadeIn">
+    <section className="mx-7 mt-20 px-16">
+        <h2 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] text-right animate-fadeIn">
             The Story Behind Notte Azzura
         </h2>
         <div className="w-60 h-1 bg-[var(--green-dark)] mt-4 rounded-full ml-auto"></div>
     </section>
 
     {/* History Card */}
-    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-screen-2xl h-auto md:h-[650px] animate-fadeIn">
+    <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[520px]">
         {/* Image */}
-        <div className="w-full md:w-1/2">
+        <div className="relative w-full md:w-1/2 h-[300px] md:h-full">
             <img
-                src="/images/Sustainability.jpg"
-                alt="History of Notte Azzura"
-                className="w-full h-full object-cover"
+            src="/images/OurHistory.jpg"
+            alt="History of Notte Azzura"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+            />
+            <img
+            src="/images/OurHistory2.jpg"
+            alt="History of Notte Azzura 2"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100"
             />
         </div>
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
+            <div className="space-y-3 text-base md:text-md leading-relaxed text-[var(--gray-dark)] max-w-md text-justify animate-fadeIn">
                 <p>
                     <strong>Notte Azzura</strong> was born in the heart of London in 1985, when a group of Italian friends
                     decided to bring the warmth, flavor, and hospitality of their homeland to the bustling city.
@@ -66,15 +71,15 @@ export default function OurHistoryPage() {
     </section>
 
     {/* Title Section - Notte Azzura’s Founders */}
-    <section className="max-w-screen-2xl mx-auto mt-20 px-6 md:px-16">
-        <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] text-left animate-fadeIn">
+    <section className="mx-7 mt-20 px-16">
+        <h2 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] text-left animate-fadeIn">
             Notte Azzura’s Founders
         </h2>
     <div className="w-60 h-1 bg-[var(--green-dark)] mt-4 rounded-full"></div>
     </section>
 
     {/* Founder 01 */}
-    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-20 max-w-screen-2xl h-auto md:h-[600px] animate-fadeIn">
+    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-20 max-w-270 h-[500px] animate-fadeIn">
         {/* Image */}
         <div className="w-full md:w-1/2">
             <img
@@ -86,11 +91,11 @@ export default function OurHistoryPage() {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--green-dark)] mb-6">
+            <h2 className="text-4xl font-playfair font-semibold text-[var(--green-dark)] mb-6">
                 Giovanni Russo
             </h2>
 
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
+            <div className="space-y-2 text-4sm leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
                 <p>
                     Born in a small town near Naples, <strong>Giovanni Russo</strong> grew up surrounded
                     by the aroma of wood-fired pizzas and the laughter of family gatherings. His dream was
@@ -115,7 +120,7 @@ export default function OurHistoryPage() {
     </section>
 
     {/* Founder 2 */}
-    <section className="flex flex-col md:flex-row-reverse bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-screen-2xl h-auto md:h-[600px] animate-fadeIn">
+    <section className="flex flex-col md:flex-row-reverse bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-270 h-[500px] animate-fadeIn">
         {/* Image */}
         <div className="w-full md:w-1/2">
             <img
@@ -127,11 +132,11 @@ export default function OurHistoryPage() {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-            <h3 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-6">
+            <h3 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] mb-6">
                 Sam Fisher
             </h3>
 
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
+            <div className="space-y-2 text-4sm leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
                 <p>
                     <strong>Sam Fisher</strong> was the creative heart behind Notte Azzura’s atmosphere
                     and culinary soul. Raised in Florence, he mastered the art of balancing beauty and
@@ -155,7 +160,7 @@ export default function OurHistoryPage() {
     </section>
 
     {/* Founder 3 */}
-    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-20 max-w-screen-2xl h-auto md:h-[600px] animate-fadeIn">
+    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-20 max-w-270 h-[500px] animate-fadeIn">
         {/* Image */}
         <div className="w-full md:w-1/2">
             <img
@@ -167,11 +172,11 @@ export default function OurHistoryPage() {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-            <h3 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--green-dark)] mb-6">
+            <h3 className="text-4xl font-playfair font-semibold text-[var(--green-dark)] mb-6">
                 Lucia Bianchi
             </h3>
 
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
+            <div className="space-y-2 text-4sm leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
             <p>
                 <strong>Lucia Bianchi</strong> brought a touch of artistry and heart to Notte Azzura’s culinary
                 creations. Growing up in Rome, she spent her youth exploring family kitchens and perfecting
@@ -194,7 +199,7 @@ export default function OurHistoryPage() {
     </section>
 
     {/* Founder 4 */}
-    <section className="flex flex-col md:flex-row-reverse bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-screen-2xl h-auto md:h-[600px] animate-fadeIn">
+    <section className="flex flex-col md:flex-row-reverse bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-16 max-w-270 h-[500px] animate-fadeIn">
         {/* Image */}
         <div className="w-full md:w-1/2">
             <img
@@ -206,11 +211,11 @@ export default function OurHistoryPage() {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-            <h3 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] mb-6">
+            <h3 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] mb-6">
                 Marco DeLuca
             </h3>
 
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
+            <div className="space-y-2 text-4sm leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
                 <p>
                     <strong>Marco DeLuca</strong> was the driving force behind Notte Azzura’s expansion and quality
                     standards. With a background in hospitality and business, Marco ensured that every restaurant
@@ -233,7 +238,7 @@ export default function OurHistoryPage() {
     </section>
 
     {/* Founder 5 */}
-    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-20 max-w-screen-2xl h-auto md:h-[600px] animate-fadeIn">
+    <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-4xl overflow-hidden mx-auto my-20 max-w-270 h-[500px] animate-fadeIn">
         {/* Image */}
         <div className="w-full md:w-1/2">
             <img
@@ -245,11 +250,11 @@ export default function OurHistoryPage() {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 text-center">
-            <h3 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--green-dark)] mb-6">
+            <h3 className="text-4xl font-playfair font-semibold text-[var(--green-dark)] mb-6">
                 Alessandro Moretti
             </h3>
 
-            <div className="space-y-4 text-lg leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
+            <div className="space-y-2 text-4sm leading-relaxed text-[var(--gray-dark)] max-w-lg text-justify">
                 <p>
                     <strong>Alessandro Moretti</strong> carried the Notte Azzura legacy into the modern age.
                     A visionary chef with a deep respect for Italian tradition, Alessandro introduced sustainable
@@ -275,15 +280,15 @@ export default function OurHistoryPage() {
     <section className="relative w-full h-[5vh] mx-auto mt-20 bg-[var(--red-dark)] flex items-center justify-center"></section>
 
     {/* Memorable Moments */}
-    <section className="max-w-screen-2xl mx-auto mt-20 px-6 md:px-16">
+    <section className="max-w-270 mx-auto mt-20 px-16">
         {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-semibold text-[var(--red-dark)] text-left animate-fadeIn">
+        <h2 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] text-left animate-fadeIn">
             Memorable Moments
         </h2>
-        <p className="text-left text-lg md:text-1xl text-[var(--gray-dark)] mt-2 tracking-widest italic animate-fadeIn">
+        <p className="text-left text-2xs text-[var(--gray-dark)] mt-2 tracking-widest italic animate-fadeIn">
             — From 1985 until today, milestones that shaped Notte Azzura —
         </p>
-        <div className="w-60 h-1 bg-[var(--green-dark)] mt-4 rounded-full ml-0"></div>
+        <div className="w-60 h-1 bg-[var(--green-dark)] mt-4 rounded-full"></div>
 
         {/* Sliding Image */}
         <div className="mt-12 flex overflow-x-auto space-x-6 pb-6 scroll-smooth snap-x snap-mandatory no-scrollbar animate-fadeIn">
@@ -296,36 +301,36 @@ export default function OurHistoryPage() {
             { year: 1990, 
             title: "First Expansion", 
             description: "The second branch opens, gaining popularity among locals and travelers.", 
-            image: "/images/Passions.jpg" 
+            image: "/images/CompanyNews.jpg" 
             },
             { year: 1995, 
             title: "Signature Pasta Introduced", 
             description: "Handmade pasta becomes the restaurant's hallmark dish.", 
-            image: "/images/Passions.jpg" 
+            image: "/images/InternationalRestaurants.jpg" 
             },
             { year: 2000, 
             title: "International Recognition", 
             description: "Notte Azzura is featured in international food magazines.", 
-            image: "/images/Passions.jpg" 
+            image: "/images/News.jpg" 
             },
             { year: 2010, 
             title: "Sustainable Sourcing", 
             description: "Alessandro Moretti introduces sustainable ingredients and eco-friendly practices.", 
-            image: "/images/Passions.jpg"
+            image: "/images/Media01.jpg"
             },
             { year: 2020, 
             title: "Modern Italian Dining", 
             description: "The restaurant blends tradition with modern culinary innovation.", 
-            image: "/images/Passions.jpg"
+            image: "/images/Media02.jpg"
             },
             { year: 2025, 
             title: "40 Years Celebration", 
             description: "Celebrating 40 years of authentic Italian cuisine, culture, and community.", 
-            image: "/images/Passions.jpg"
+            image: "/images/Media03.jpg"
             },
         ].map((moment, index) => (
         <div key={index} className="flex-shrink-0 w-80 md:w-96 snap-start bg-[var(--white)] rounded-3xl shadow-lg overflow-hidden">
-            <div className="relative w-full h-64 md:h-72">
+            <div className="relative w-full h-64">
                 <img
                     src={moment.image}
                     alt={moment.title}
@@ -333,7 +338,7 @@ export default function OurHistoryPage() {
                 />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
                 <p className="text-lg font-semibold">{moment.year}</p>
-                <h3 className="text-2xl font-[var(--font-playfair)] font-bold">{moment.title}</h3>
+                <h3 className="text-2xl font-playfair font-bold">{moment.title}</h3>
             </div>
             </div>
             <div className="p-4 text-[var(--gray-dark)] text-base">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import Link from "next/link";
 
 export default function FounderPage() {
     const { id } = useParams();
@@ -8,24 +9,24 @@ export default function FounderPage() {
     // Founder 1: Giovanni Russo
     if (id === "1") {
         return (
-            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-[var(--font-playfair)] px-6 md:px-16 py-12">
+            <main className="min-h-500 bg-[var(--cream)] text-[var(--red-dark)] font-playfair px-6 md:px-16 py-12 animate-fadeIn">
             
             {/* Header */}
             <header className="text-center mb-16">
-                <h1 className="text-6xl md:text-7xl font-sans font-bold tracking-wide mb-4">
+                <h1 className="text-5xl font-semibold text-[var(--green-dark)]">
                     Giovanni Russo
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold text-[var(--green-dark)]">
+                <h2 className="text-3xl font-semibold text-[var(--red-dark)] mt-2">
                     Founder & Head Chef
                 </h2>
             </header>
 
             {/* Article Section */}
-            <section className="max-w-screen-2xl mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12"> 
+            <section className="max-w-270 mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12"> 
         
             {/* Bio */}
-            <div className="w-full md:w-3/5 text-justify text-lg md:text-xl leading-relaxed column-count-2 column-gap-10 space-y-6">
-                <p className="first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
+            <div className="w-3/5 text-justify text-md leading-relaxed column-count-2 column-gap-10 space-y-6">
+                <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
                     Born in a small town near Naples, Giovanni Russo grew up surrounded by the aroma of wood-fired pizzas, freshly baked bread, and the laughter of family gatherings. From an early age, he showed a keen interest in cooking, often helping his grandmother in the kitchen and learning the secrets of traditional Italian recipes passed down through generations.
                 </p>
                 <p>
@@ -40,13 +41,13 @@ export default function FounderPage() {
             </div>
 
             {/* Image + Quote */}
-            <div className="w-full md:w-2/5 flex flex-col items-center md:items-end">
+            <div className="w-2/5 flex flex-col items-end">
                 <img
                     src="/images/Founder01.jpg"
                     alt="Giovanni Russo"
                     className="w-full max-w-md h-auto rounded-3xl shadow-lg mb-6"
                 />
-                <blockquote className="text-xl md:text-2xl italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
+                <blockquote className="text-md italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
                     "Every dish tells a story, and every story deserves to be shared."
                 </blockquote>
             </div>
@@ -56,14 +57,14 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Achievements + Philosophy */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto px-4 flex flex-row gap-12">
                 
             {/* Achievements */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Achievements
                 </h3>
-                <ul className="list-disc list-inside space-y-2 text-lg md:text-xl">
+                <ul className="list-disc list-inside space-y-3 text-md">
                     <li>Opened the first Notte Azzura in London in 1985, introducing authentic Italian dining to the city.</li>
                     <li>Received multiple culinary awards for traditional Italian cuisine, including “Best Italian Restaurant in London” three times.</li>
                     <li>Mentored over 50 chefs who now run their own successful restaurants across Europe and North America.</li>
@@ -74,14 +75,14 @@ export default function FounderPage() {
             </div>
 
             {/* Philosophy & Cooking Style */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
                     Philosophy & Cooking Style
                 </h3>
-                <p className="text-lg md:text-xl leading-relaxed text-justify space-y-4">
+                <p className="text-md leading-relaxed text-justify space-y-3">
                     Giovanni’s cooking philosophy is rooted in authenticity, simplicity, and passion. He believes that every ingredient has a story and that respecting traditional techniques brings out the best flavors. His style balances rustic Italian classics with modern creativity, always prioritizing fresh, seasonal ingredients. Giovanni emphasizes that food should be shared, enjoyed, and remembered — not just consumed.
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed text-justify mt-4">
+                <p className="text-md leading-relaxed text-justify mt-4">
                     He also integrates sustainable sourcing and teaches young chefs to honor both tradition and innovation. This philosophy has shaped Notte Azzura’s reputation as a place where culinary art and heartfelt hospitality come together seamlessly.
                 </p>
             </div>
@@ -91,43 +92,53 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Media & Press Mentions */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16">
+            <section className="max-w-270 mx-auto px-4">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Media & Press Mentions
                 </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+            <div className="grid grid-cols-3 gap-8 mt-6">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media01.jpg" 
                         alt="Media 1" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Notte Azzura brings authentic Italian flavors with an unforgettable dining experience.” – Food Magazine
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media02.jpg" 
                         alt="Media 2" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “A masterpiece of Italian cuisine in the heart of London.” – Culinary Times
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media03.jpg" 
                         alt="Media 3" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Giovanni Russo’s vision and passion shine in every dish.” – Global Eats
                     </p>
                 </div>
             </div>
+            </section>
+
+            {/* Back to Our History Page Button */}
+            <section className="text-center py-16">
+                <Link
+                href="/about/OurHistory"
+                className="inline-block border border-[var(--red-dark)] text-[var(--red-dark)] px-8 py-3 rounded-full font-semibold hover:bg-[var(--red-dark)] hover:text-[var(--white)] transition duration-300"
+                >
+                Back to Our History
+                </Link>
             </section>
             </main>
         );
@@ -136,24 +147,24 @@ export default function FounderPage() {
     // Founder 2: Sam Fisher
     if (id === "2") {
         return (
-            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-serif px-6 md:px-16 py-12">
+            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-playfair px-6 md:px-16 py-12 animate-fadeIn">
             
             {/* Header */}
             <header className="text-center mb-16">
-                <h1 className="text-6xl md:text-7xl font-sans font-bold tracking-wide mb-4">
+                <h1 className="text-5xl font-semibold text-[var(--red-dark)]">
                     Sam Fisher
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold text-[var(--green-dark)]">
+                <h2 className="text-3xl font-semibold text-[var(--green-dark)] mt-2">
                     Co-Founder & Culinary Director
                 </h2>
             </header>
 
             {/* Article Section */}
-            <section className="max-w-screen-2xl mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">
             
             {/* Bio */}
-            <div className="w-full md:w-3/5 text-justify text-lg md:text-xl leading-relaxed column-count-2 column-gap-10 space-y-6">
-                <p className="first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
+            <div className="w-3/5 text-justify text-md leading-relaxed column-count-2 column-gap-10 space-y-6">
+                <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
                     Sam Fisher was the creative heart behind Notte Azzura’s atmosphere and culinary soul. Raised in Florence, he mastered the art of balancing beauty and simplicity — from the flavors on the plate to the design of every restaurant space.
                 </p>
                 <p>
@@ -168,13 +179,13 @@ export default function FounderPage() {
             </div>
 
             {/* Image + Quote */}
-            <div className="w-full md:w-2/5 flex flex-col items-center md:items-end">
+            <div className="w-2/5 flex flex-col items-end">
                 <img
                     src="/images/Founder02.jpg"
                     alt="Sam Fisher"
                     className="w-full max-w-md h-auto rounded-3xl shadow-lg mb-6"
                 />
-                <blockquote className="text-xl md:text-2xl italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
+                <blockquote className="text-md italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
                     "Design and flavor go hand in hand; every detail tells a story."
                 </blockquote>
             </div>
@@ -184,14 +195,14 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Achievements + Philosophy */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto px-4 flex flex-row gap-12">
                 
             {/* Achievements */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
+            <div className="w-w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Achievements
                 </h3>
-                <ul className="list-disc list-inside space-y-2 text-lg md:text-xl">
+                <ul className="list-disc list-inside space-y-3 text-md">
                 <li>Co-created the unique aesthetic and branding of Notte Azzura, setting new standards in Italian dining design.</li>
                     <li>Designed signature interiors for multiple Notte Azzura locations, blending elegance with warmth.</li>
                     <li>Collaborated with chefs to craft visually stunning presentations for signature dishes.</li>
@@ -202,14 +213,14 @@ export default function FounderPage() {
             </div>
 
             {/* Philosophy & Style */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
                     Philosophy & Style
                 </h3>
-                <p className="text-lg md:text-xl leading-relaxed text-justify space-y-4">
+                <p className="text-md leading-relaxed text-justify space-y-3">
                     Sam believes that dining is a multi-sensory experience, where flavor, design, and ambiance work together. His style emphasizes simplicity, elegance, and thoughtful details that enhance the enjoyment of Italian cuisine.
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed text-justify mt-4">
+                <p className="text-md leading-relaxed text-justify space-y-3">
                     By integrating sustainable materials, balanced aesthetics, and storytelling through design, Sam ensures that every restaurant reflects the soul of Italian culture while inviting guests to feel at home.
                 </p>
             </div>
@@ -219,43 +230,53 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Media & Press Mentions */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16">
+            <section className="max-w-270 mx-auto px-4">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Media & Press Mentions
                 </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+            <div className="grid grid-cols-3 gap-8 mt-6">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media01.jpg" 
                         alt="Media 1" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Sam Fisher’s design vision elevates dining into an unforgettable experience.” – Design & Dining Magazine
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media02.jpg" 
                         alt="Media 2" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “A master of ambiance and visual storytelling in Italian restaurants.” – Culinary Spaces
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media03.jpg" 
                         alt="Media 3" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “His partnership with Giovanni Russo brought harmony between taste and aesthetics.” – Global Hospitality Review
                     </p>
                 </div>
             </div>
+            </section>
+
+            {/* Back to Our History Page Button */}
+            <section className="text-center py-16">
+                <Link
+                href="/about/OurHistory"
+                className="inline-block border border-[var(--red-dark)] text-[var(--red-dark)] px-8 py-3 rounded-full font-semibold hover:bg-[var(--red-dark)] hover:text-[var(--white)] transition duration-300"
+                >
+                Back to Our History
+                </Link>
             </section>
             </main>
         );
@@ -264,24 +285,24 @@ export default function FounderPage() {
     // Founder 3: Lucia Bianchi
     if (id === "3") {
         return (
-            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-serif px-6 md:px-16 py-12">
+            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-playfair px-6 md:px-16 py-12 animate-fadeIn">
             
             {/* Header */}
             <header className="text-center mb-16">
-                <h1 className="text-6xl md:text-7xl font-sans font-bold tracking-wide mb-4">
+                <h1 className="text-5xl font-semibold text-[var(--green-dark)]">
                     Lucia Bianchi
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold text-[var(--green-dark)]">
+                <h2 className="text-3xl font-semibold text-[var(--red-dark)] mt-2">
                     Head Chef & Culinary Innovator
                 </h2>
             </header>
 
             {/* Article Section */}
-            <section className="max-w-screen-2xl mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">
                 
             {/* Bio */}
-            <div className="w-full md:w-3/5 text-justify text-lg md:text-xl leading-relaxed column-count-2 column-gap-10 space-y-6">
-                <p className="first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
+            <div className="w-3/5 text-justify text-md leading-relaxed column-count-2 column-gap-10 space-y-6">
+                <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
                     Lucia Bianchi brought a touch of artistry and heart to Notte Azzura’s culinary creations. Growing up in Rome, she spent her youth exploring family kitchens and perfecting traditional recipes passed down through generations.
                 </p>
                 <p>
@@ -296,13 +317,13 @@ export default function FounderPage() {
             </div>
 
             {/* Image + Quote */}
-            <div className="w-full md:w-2/5 flex flex-col items-center md:items-end">
+            <div className="w-2/5 flex flex-col items-end">
                 <img
                     src="/images/Founder03.jpg"
                     alt="Lucia Bianchi"
                     className="w-full max-w-md h-auto rounded-3xl shadow-lg mb-6"
                 />
-                <blockquote className="text-xl md:text-2xl italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
+                <blockquote className="text-md italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
                     "Cooking is where tradition meets imagination; every plate is a canvas."
                 </blockquote>
             </div>
@@ -312,14 +333,14 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Achievements + Philosophy */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto px-4 flex flex-row gap-12">
                 
             {/* Achievements */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Achievements
                 </h3>
-                <ul className="list-disc list-inside space-y-2 text-lg md:text-xl">
+                <ul className="list-disc list-inside space-y-3 text-md">
                     <li>Created signature dishes that blend tradition with modern culinary artistry.</li>
                     <li>Developed seasonal and themed menus that have become central to Notte Azzura’s identity.</li>
                     <li>Featured in culinary publications for innovative approaches to classic Italian cuisine.</li>
@@ -330,14 +351,14 @@ export default function FounderPage() {
             </div>
 
             {/* Philosophy & Style */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
                     Philosophy & Style
                 </h3>
-                <p className="text-lg md:text-xl leading-relaxed text-justify space-y-4">
+                <p className="text-md leading-relaxed text-justify space-y-3">
                     Lucia’s culinary philosophy combines respect for tradition with artistic innovation. She believes that food should evoke emotion, telling a story through flavors, textures, and presentation.
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed text-justify mt-4">
+                <p className="text-md leading-relaxed text-justify mt-4">
                     Her style emphasizes seasonal ingredients, balanced flavors, and visually striking plating, making each dining experience memorable and deeply connected to Italian culture.
                 </p>
             </div>
@@ -347,43 +368,53 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Media & Press Mentions */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16">
+            <section className="max-w-270 mx-auto px-4">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Media & Press Mentions
                 </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+            <div className="grid grid-cols-3 gap-8 mt-6">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media01.jpg" 
                         alt="Media 1" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Lucia Bianchi transforms traditional Italian cuisine into a culinary art form.” – Culinary Arts Magazine
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media02.jpg" 
                         alt="Media 2" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Her innovative dishes perfectly blend nostalgia with creativity.” – Global Gastronomy
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media03.jpg" 
                         alt="Media 3" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Lucia’s culinary vision brings artistry and heart to every plate.” – Italian Food Review
                     </p>
                 </div>
             </div>
+            </section>
+
+            {/* Back to Our History Page Button */}
+            <section className="text-center py-16">
+                <Link
+                href="/about/OurHistory"
+                className="inline-block border border-[var(--red-dark)] text-[var(--red-dark)] px-8 py-3 rounded-full font-semibold hover:bg-[var(--red-dark)] hover:text-[var(--white)] transition duration-300"
+                >
+                Back to Our History
+                </Link>
             </section>
             </main>
         );
@@ -392,24 +423,24 @@ export default function FounderPage() {
     // Founder 4: Marco DeLuca
     if (id === "4") {
         return (
-            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-serif px-6 md:px-16 py-12">
+            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-playfair px-6 md:px-16 py-12 animate-fadeIn">
                 
             {/* Header */}
             <header className="text-center mb-16">
-                <h1 className="text-6xl md:text-7xl font-sans font-bold tracking-wide mb-4">
+                <h1 className="text-5xl font-semibold text-[var(--red-dark)]">
                     Marco DeLuca
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold text-[var(--green-dark)]">
+                <h2 className="text-3xl font-semibold text-[var(--green-dark)] mt-2">
                     COO & Co-Founder
                 </h2>
             </header>
 
             {/* Article Section */}
-            <section className="max-w-screen-2xl mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">     
+            <section className="max-w-270 mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">     
             
             {/* Bio */}
-            <div className="w-full md:w-3/5 text-justify text-lg md:text-xl leading-relaxed column-count-2 column-gap-10 space-y-6">
-                <p className="first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
+            <div className="w-3/5 text-justify text-md leading-relaxed column-count-2 column-gap-10 space-y-6">
+                <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
                     Marco DeLuca was the driving force behind Notte Azzura’s expansion and quality standards. With a background in hospitality and business, Marco ensured that every restaurant reflected the same warmth and excellence as the original.
                 </p>
                 <p>
@@ -424,13 +455,13 @@ export default function FounderPage() {
             </div>
 
             {/* Image + Quote */}
-            <div className="w-full md:w-2/5 flex flex-col items-center md:items-end">
+            <div className="w-2/5 flex flex-col items-end">
                 <img
                     src="/images/Founder04.jpg"
                     alt="Marco DeLuca"
                     className="w-full max-w-md h-auto rounded-3xl shadow-lg mb-6"
                 />
-                <blockquote className="text-xl md:text-2xl italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
+                <blockquote className="text-md italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
                     "Consistency, passion, and care are what transform good food into a memorable experience."
                 </blockquote>
             </div>
@@ -440,14 +471,14 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Achievements + Philosophy */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto px-4 flex flex-row gap-12">
                     
             {/* Achievements */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Achievements
                 </h3>
-                <ul className="list-disc list-inside space-y-2 text-lg md:text-xl">
+                <ul className="list-disc list-inside space-y-3 text-md">
                     <li>Oversaw the successful expansion of Notte Azzura to multiple international locations.</li>
                     <li>Implemented high standards of quality, service, and operational efficiency across all restaurants.</li>
                     <li>Developed employee training programs emphasizing hospitality, teamwork, and excellence.</li>
@@ -458,14 +489,14 @@ export default function FounderPage() {
             </div>
 
             {/* Philosophy & Style */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
                     Philosophy & Leadership Style
                 </h3>
-                <p className="text-lg md:text-xl leading-relaxed text-justify space-y-4">
+                <p className="text-md leading-relaxed text-justify space-y-3">
                     Marco believes that operational excellence and attention to detail are essential to delivering a memorable dining experience. He emphasizes consistency, staff empowerment, and proactive management to maintain the highest standards.
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed text-justify mt-4">
+                <p className="text-md leading-relaxed text-justify mt-4">
                     His approach combines strategic thinking with a hands-on understanding of restaurant operations, ensuring that Notte Azzura maintains its warmth, authenticity, and quality across all locations.
                 </p>
             </div>
@@ -475,43 +506,53 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Media & Press Mentions */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16">
+            <section className="max-w-270 mx-auto px-4">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Media & Press Mentions
                 </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+            <div className="grid grid-cols-3 gap-8 mt-6">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media01.jpg" 
                         alt="Media 1" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Marco DeLuca ensures Notte Azzura maintains excellence at every location.” – Hospitality Today
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media02.jpg" 
                         alt="Media 2" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “A visionary in restaurant management and operational leadership.” – Global Dining Review
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                     src="/images/Media03.jpg" 
                     alt="Media 3" 
                     className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                     “Marco’s leadership has built a culture of consistency and passion across all Notte Azzura restaurants.” – Culinary Management Journal
                     </p>
                 </div>
             </div>
+            </section>
+
+            {/* Back to Our History Page Button */}
+            <section className="text-center py-16">
+                <Link
+                href="/about/OurHistory"
+                className="inline-block border border-[var(--red-dark)] text-[var(--red-dark)] px-8 py-3 rounded-full font-semibold hover:bg-[var(--red-dark)] hover:text-[var(--white)] transition duration-300"
+                >
+                Back to Our History
+                </Link>
             </section>
             </main>
         );
@@ -520,24 +561,24 @@ export default function FounderPage() {
     // Founder 5: Alessandro Moretti
     if (id === "5") {
         return (
-            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-serif px-6 md:px-16 py-12">
+            <main className="min-h-screen bg-[var(--cream)] text-[var(--red-dark)] font-playfair px-6 md:px-16 py-12 animate-fadeIn">
                 
             {/* Header */}
             <header className="text-center mb-16">
-                <h1 className="text-6xl md:text-7xl font-sans font-bold tracking-wide mb-4">
+                <h1 className="text-5xl font-semibold text-[var(--green-dark)]">
                     Alessandro Moretti
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold text-[var(--green-dark)]">
+                <h2 className="text-3xl font-semibold text-[var(--red-dark)] mt-2">
                     Head Chef & Culinary Visionary
                 </h2>
             </header>
 
             {/* Article Section */}
-            <section className="max-w-screen-2xl mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto bg-[var(--white)] shadow-lg rounded-4xl p-8 md:p-16 flex flex-col md:flex-row gap-12">
                     
             {/* Bio */}
-            <div className="w-full md:w-3/5 text-justify text-lg md:text-xl leading-relaxed column-count-2 column-gap-10 space-y-6">
-                <p className="first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
+            <div className="w-3/5 text-justify text-md leading-relaxed column-count-2 column-gap-10 space-y-6">
+                <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-[var(--red-dark)]">
                     Alessandro Moretti is a visionary chef who has seamlessly carried the Notte Azzura legacy into the modern era. Born and raised in the heart of Tuscany, Alessandro developed a deep appreciation for the rich culinary traditions of Italy from a young age, spending countless hours in family kitchens learning the art of flavors, textures, and presentation.
                 </p>
                 <p>
@@ -552,13 +593,13 @@ export default function FounderPage() {
             </div>
 
             {/* Image + Quote */}
-            <div className="w-full md:w-2/5 flex flex-col items-center md:items-end">
+            <div className="w-2/5 flex flex-col items-end">
                 <img
                     src="/images/Founder05.jpg"
                     alt="Alessandro Moretti"
                     className="w-full max-w-md h-auto rounded-3xl shadow-lg mb-6"
                 />
-                <blockquote className="text-xl md:text-2xl italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
+                <blockquote className="text-md italic text-[var(--red-dark)] text-right max-w-md border-l-4 border-[var(--red-dark)] pl-4">
                     "Cooking is not just about ingredients; it’s about stories, memories, and the love we share through every plate."
                 </blockquote>
             </div>
@@ -568,14 +609,14 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Achievements + Philosophy */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16 flex flex-col md:flex-row gap-12">
+            <section className="max-w-270 mx-auto px-4 flex flex-row gap-12">
                     
             {/* Achievements */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Achievements
                 </h3>
-                <ul className="list-disc list-inside space-y-2 text-lg md:text-xl">
+                <ul className="list-disc list-inside space-y-3 text-md">
                     <li>Introduced sustainable sourcing practices in line with modern culinary trends.</li>
                     <li>Developed innovative cooking techniques while preserving traditional Italian flavors.</li>
                     <li>Created seasonal and thematic menus that modernize classic dishes without losing authenticity.</li>
@@ -586,14 +627,14 @@ export default function FounderPage() {
             </div>
 
             {/* Philosophy & Style */}
-            <div className="w-full md:w-1/2 column-count-1 md:column-count-2 column-gap-8">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
+            <div className="w-1/2 column-count-1 column-gap-8">
+                <h3 className="text-3xl font-semibold mb-6 text-[var(--red-dark)] border-b border-[var(--red-dark)] pb-2">
                     Philosophy & Style
                 </h3>
-                <p className="text-lg md:text-xl leading-relaxed text-justify space-y-4">
+                <p className="text-md leading-relaxed text-justify space-y-3">
                     Alessandro believes that modern culinary innovation can coexist with tradition. His style emphasizes seasonal, sustainable ingredients, artistic plating, and thoughtful reinterpretation of classic dishes.
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed text-justify mt-4">
+                <p className="text-md leading-relaxed text-justify mt-4">
                     By blending heritage with progress, Alessandro ensures that Notte Azzura continues to offer memorable dining experiences that honor the past while embracing the future.
                 </p>
             </div>
@@ -603,43 +644,53 @@ export default function FounderPage() {
             <hr className="border-t border-gray-300 my-12"/>
 
             {/* Media & Press Mentions */}
-            <section className="max-w-screen-2xl mx-auto px-4 md:px-16">
+            <section className="max-w-270 mx-auto px-4">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-[var(--green-dark)] border-b border-[var(--green-dark)] pb-2">
                     Media & Press Mentions
                 </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-6">
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+            <div className="grid grid-cols-3 gap-8 mt-6">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media01.jpg" 
                         alt="Media 1" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Alessandro Moretti modernizes traditional Italian cuisine with respect and creativity.” – Culinary Today
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media02.jpg" 
                         alt="Media 2" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “A visionary chef blending heritage with modern techniques.” – Global Gastronomy
                     </p>
                 </div>
-                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-6 flex flex-col items-start">
+                <div className="bg-[var(--white)] shadow-lg rounded-3xl p-4 flex flex-col items-start max-h-95">
                     <img 
                         src="/images/Media03.jpg" 
                         alt="Media 3" 
                         className="w-full h-65 object-cover mb-4 rounded-2xl"
                     />
-                    <p className="text-lg md:text-xl italic text-[var(--gray-dark)]">
+                    <p className="text-md italic text-[var(--gray-dark)]">
                         “Alessandro’s philosophy ensures each dish tells a story worth savoring.” – Italian Culinary Review
                     </p>
                 </div>
             </div>
+            </section>
+
+            {/* Back to Our History Page Button */}
+            <section className="text-center py-16">
+                <Link
+                href="/about/OurHistory"
+                className="inline-block border border-[var(--red-dark)] text-[var(--red-dark)] px-8 py-3 rounded-full font-semibold hover:bg-[var(--red-dark)] hover:text-[var(--white)] transition duration-300"
+                >
+                Back to Our History
+                </Link>
             </section>
             </main>
         );
