@@ -24,9 +24,7 @@ export default function Navbar() {
             >
                 ☰
             </div>
-            <nav
-                className={`text-(--cream) md:flex md:items-center md:gap-10 md:static absolute top-full left-0 w-full md:w-auto bg-[rgba(130,31,6,0.7)] md:bg-transparent backdrop-blur-md md:backdrop-blur-0 shadow-md md:shadow-none flex flex-col items-center gap-8 md:flex-row transition-all duration-300 overflow-hidden ${open ? "max-h-100 py-4" : "max-h-0 md:max-h-none"}`}
-            >
+            <nav className={`text-(--cream) md:flex md:items-center md:gap-10 md:static absolute top-full left-0 w-full md:w-auto bg-[rgba(130,31,6,0.7)] md:bg-transparent backdrop-blur-md md:backdrop-blur-0 shadow-md md:shadow-none flex flex-col items-center gap-8 md:flex-row transition-all duration-300 overflow-hidden ${open ? "max-h-100 py-4" : "max-h-0 md:max-h-none"}`}>
                 <Link href="/">Home</Link>
                 <Link href="/menu">Menu</Link>
                 <Link href="/services">Services</Link>
