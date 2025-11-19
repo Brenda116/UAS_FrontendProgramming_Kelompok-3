@@ -9,7 +9,7 @@ export default function LoginPage() {
                         className="w-48 sm:w-72 object-contain"
                     />
                 </div>
-                <div className="w-full sm:w-3/5 text-white">
+                <div className="w-full sm:w-3/5 text-(--cream)">
                     <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
                     <form className="flex flex-col gap-4">
                         <input
@@ -24,7 +24,7 @@ export default function LoginPage() {
                         />
                         <button className="bg-(--green) text-(--white) py-3 rounded cursor-pointer font-semibold">Login</button>
                     </form>
-                    <div className="mt-6 text-center text-sm text-white">
+                    <div className="mt-6 text-center text-sm text-(--cream)">
                         © 2025 NOTTE AZZURA | All rights reserved.
                     </div>
                 </div>

@@ -39,9 +39,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-[var(--cream)] text-[var(--black)]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-(--cream) text-(--black)`}
       >
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
