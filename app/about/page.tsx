@@ -5,17 +5,17 @@ export default function AboutPage() {
     <main className="bg-[var(--cream)] text-[var(--red-dark)] min-h-70 font-playfair">
 
       {/* Hero */}
-      <section className="relative h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40" />
+      <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40"/>
         <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center animate-fadeIn">
           ABOUT US
         </h1>
       </section>
 
       {/* Our History Card */}
-      <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[520px]">
+      <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 w-110 md:w-full max-w-screen-lg h-auto">
         {/* Image */}
-        <div className="w-full md:w-1/2">
+        <div className="h-60 md:h-auto w-full md:w-1/2">
           <img
             src="/images/OurHistory.jpg"
             alt="Our History"
@@ -29,7 +29,7 @@ export default function AboutPage() {
             Our History
           </h2>
 
-          <div className="space-y-3 text-base md:text-md leading-relaxed text-[var(--gray-dark)] max-w-md text-justify animate-fadeIn">
+          <div className="space-y-3 text-sm md:text-md leading-relaxed text-[var(--gray-dark)] max-w-md text-justify animate-fadeIn">
             <p>
               Welcome to <strong>Notte Azzura</strong>, an Italian dining haven in the heart of London,
               born from a family's passion for authentic Italian flavors.
@@ -54,7 +54,7 @@ export default function AboutPage() {
       </section>
 
       {/* Culinary Philosophy Card */}
-      <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[360px] relative transition-all duration-500">
+      <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-110 md:max-w-270 h-auto md:h-[360px] relative transition-all duration-500">
 
         {/* Text */}
         <div className="relative w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 text-center overflow-hidden">
@@ -78,12 +78,12 @@ export default function AboutPage() {
 
           {/* Text 02 Hover */}
           <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               The story of <span className="italic font-semibold">Notte Azzura</span> began with a promise —
               to keep the essence of Italian dining alive through warmth, artistry, and heritage.
             </p>
             <br />
-            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               Our kitchen follows the traditions of Rome & Naples — slow sauces, rising dough,
               and heartfelt cooking that carries history with every plate.
             </p>
@@ -102,7 +102,7 @@ export default function AboutPage() {
       </section>
 
       {/* Sustainability Plans Card */}
-      <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-270 h-auto md:h-[360px] relative transition-all duration-500">
+      <section className="group flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 max-w-110 md:max-w-270 h-auto md:h-[360px] relative transition-all duration-500">
 
         {/* Image */}
         <div className="w-full md:w-1/2">
@@ -135,11 +135,11 @@ export default function AboutPage() {
 
           {/* Text 02 Hover */}
           <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               We rely on locally sourced produce and seasonal selections to honor nature and community.
             </p>
             <br />
-            <p className="md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               From composting waste to minimizing plastics, we ensure great food can align with caring for the planet.
             </p>
           </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* Divider Hero */}
-      <section className="relative w-full h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
         <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
           NOTTE AZZURA
         </h2>
@@ -157,7 +157,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Team & Company News */}
-      <section className="max-w-270 mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="max-w-110 md:max-w-270 mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Team */}
         <div className="bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8">
@@ -208,7 +208,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Passions , Our Mission &  Our Vision */}
-      <section className="max-w-270 h-130 mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="max-w-110 md:max-w-270 h-370 md:h-130 mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
 
         {/* Our Passions */}
         <div className="group bg-[var(--white)] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-xl transition duration-300 pb-8 relative">
@@ -221,7 +221,7 @@ export default function AboutPage() {
             <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
               Our Passions
             </h3>
-            <p className="text-[var(--gray-dark)] text-base md:text-15 leading-relaxed mb-5 animate-fadeIn">
+            <p className="text-[var(--gray-dark)] text-sm md:text-15 leading-relaxed mb-5 animate-fadeIn">
               Great food, great music, great company. Our passion is to bring this spirit to every experience, 
               creating a place where warmth, connection, and authentic Italian joy come naturally.            
             </p>
@@ -229,7 +229,7 @@ export default function AboutPage() {
 
           {/* Text Hover */}
           <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <p className="md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-lg md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               Our passion is to bring the true Italian spirit to every moment — where great food, warm music, 
               and genuine company come together effortlessly. We aim to create experiences that feel inviting 
               and heartfelt, allowing guests to enjoy the simple pleasures of togetherness, authenticity, and 
@@ -249,7 +249,7 @@ export default function AboutPage() {
             <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
               Our Vision
             </h3>
-            <p className="text-[var(--gray-dark)] text-base md:text-15 leading-relaxed mb-5 animate-fadeIn">
+            <p className="text-[var(--gray-dark)] text-sm md:text-15 leading-relaxed mb-5 animate-fadeIn">
               Our mission is to craft authentic Italian experiences through exceptional flavors, heartfelt 
               hospitality, and a warm atmosphere that brings people together.
             </p>
@@ -257,7 +257,7 @@ export default function AboutPage() {
 
           {/* Text Hover */}
           <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <p className="md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-lg md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               We envision Notte Azzura as a space where every guest feels transported into the heart of Italy — 
               a place where culinary artistry, hospitality, and atmosphere come together in perfect harmony. 
               Our vision is to create moments that linger in memory, where guests feel connected not only to the 
@@ -277,7 +277,7 @@ export default function AboutPage() {
             <h3 className="text-2xl md:text-3xl font-semibold text-[var(--red-dark)] mb-3 animate-fadeIn">
               Our Mission
             </h3>
-            <p className="text-[var(--gray-dark)] text-base md:text-20 leading-relaxed mb-5 animate-fadeIn">
+            <p className="text-[var(--gray-dark)] text-sm md:text-20 leading-relaxed mb-5 animate-fadeIn">
               Our mission is to bring authentic Italian culinary artistry to every guest through refined flavors, 
               warm hospitality, and unforgettable dining experiences.            
             </p>
@@ -285,7 +285,7 @@ export default function AboutPage() {
 
           {/* Text Hover */}
           <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <p className="md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
+            <p className="text-lg md:text-4sm leading-relaxed text-[var(--gray-dark)] max-w-md text-justify">
               We rely on locally sourced produce and seasonal selections to honor nature and support our 
               surrounding community. By choosing ingredients that are harvested at their peak, we not only 
               celebrate freshness and flavor, but also strengthen our connection with local farmers and producers. 

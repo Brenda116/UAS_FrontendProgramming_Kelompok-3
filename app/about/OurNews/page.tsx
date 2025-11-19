@@ -151,10 +151,10 @@ export default function NewsPage() {
       <section className="relative h-[55vh] flex flex-col items-center justify-center bg-[var(--red-dark)] text-[var(--white)] text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/80 to-[var(--black)]/60" />
         <div className="relative z-10">
-          <h1 className="text-5xl font-bold tracking-widest">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-widest">
             NOTTE AZZURA NEWS
           </h1>
-          <p className="mt-4 text-ls italic tracking-widest text-[var(--cream)]">
+          <p className="mt-4 text-sm md:text-ls italic tracking-widest text-[var(--cream)]">
             — mangiare bene è vivere bene —
           </p>
         </div>
@@ -163,15 +163,15 @@ export default function NewsPage() {
       {/* News Section */}
       <section ref={newsSectionRef} className="max-w-6xl mx-auto px-12 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold uppercase tracking-widest border-b pb-4 border-[var(--red-dark)]/30">
+          <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-widest border-b pb-4 border-[var(--red-dark)]/30">
             The Notte Azzura Times
           </h2>
-          <p className="mt-3 text-4ls italic text-[var(--gray-dark)] tracking-wider">
+          <p className="mt-3 text-sm md:text-4ls italic text-[var(--gray-dark)] tracking-wider">
             “Where every achievement is a story worth savoring.”
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-x-10 gap-y-5 column-fill: balance">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-5 column-fill: balance">
           {currentArticles.map((article) => (
             <article
               key={article.id}
@@ -184,7 +184,7 @@ export default function NewsPage() {
               <h3 className="text-xl font-semibold mb-2 leading-snug text-[var(--red-dark)] hover:underline decoration-[var(--red-dark)]/40 underline-offset-4 cursor-pointer">
                 {article.title}
               </h3>
-              <p className="text-md text-[var(--gray-dark)] leading-relaxed text-justify">
+              <p className="text-sm md:text-md text-[var(--gray-dark)] leading-relaxed text-justify">
                 {article.desc}
               </p>
               <p className="mt-3 text-sm text-[var(--gray)] italic">
@@ -229,7 +229,7 @@ export default function NewsPage() {
       </section>
 
       {/* Divider Hero */}
-      <section className="relative w-full h-[50vh] mx-auto mt-20 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-20 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
         <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[var(--white)] tracking-widest animate-fadeIn">
           NOTTE AZZURA
         </h2>
@@ -244,7 +244,7 @@ export default function NewsPage() {
           <h2 className="text-4xl font-bold uppercase tracking-widest border-b pb-4 border-[var(--red-dark)]/30">
             Awards & Recognitions
           </h2>
-          <p className="text-4ls mt-3 italic text-[var(--gray-dark)]">
+          <p className="text-sm md:text-4ls mt-3 italic text-[var(--gray-dark)]">
             “Honoring the milestones that shaped Notte Azzura’s journey of excellence.”
           </p>
         </div>
@@ -259,12 +259,12 @@ export default function NewsPage() {
 
             {/* Text (Hover) */}
             <div className="absolute inset-0 bg-[var(--white)]/95 flex flex-col justify-center items-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 The story of <span className="italic font-semibold">Notte Azzura</span> began
                 with a promise — to keep the essence of Italian dining alive in a modern world.
               </p>
               <br />
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Our kitchen follows the same melody as the trattorias of Rome and Naples —
                 where sauces bubble slowly and every plate carries a piece of history.
               </p>
@@ -280,12 +280,12 @@ export default function NewsPage() {
 
             {/* Text (Hover) */}
             <div className="absolute inset-0 bg-[var(--white)]/95 flex flex-col justify-center items-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 <span className="italic font-semibold">Chef Giovanni Russo</span> has long been
                 admired for his ability to elevate Italian classics with refined modern touches.
               </p>
               <br />
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 His dishes speak through balance — honoring timeless traditions while introducing
                 fresh interpretations that define his signature culinary artistry.
               </p>
@@ -301,12 +301,12 @@ export default function NewsPage() {
 
             {/* Text (Hover) */}
             <div className="absolute inset-0 bg-[var(--white)]/95 flex flex-col justify-center items-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Testament to Notte Azzura’s commitment to sustainability vision built on mindful
                 sourcing, responsible waste management, and eco-conscious innovation.
               </p>
               <br />
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Continuous effort to cultivate greener kitchen practices,
                 ensuring every creation delights the palate but also respects the environment
                 it comes from.
@@ -323,11 +323,11 @@ export default function NewsPage() {
 
             {/* Text (Hover) */}
             <div className="absolute inset-0 bg-[var(--white)]/95 flex flex-col justify-center items-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Chosen by our loyal guests, the <span className="italic font-semibold">Customer Choice Excellence Award</span> celebrates the genuine connections formed through every visit and every shared meal.
               </p>
               <br />
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 It stands as a tribute to the warmth, care, and attentive hospitality
                 that make each experience at Notte Azzura feel truly personal.
               </p>
@@ -343,12 +343,12 @@ export default function NewsPage() {
 
             {/* Text (Hover) */}
             <div className="absolute inset-0 bg-[var(--white)]/95 flex flex-col justify-center items-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Celebrating a refined mastery in selecting and pairing wines that elevate every
                 Italian dish with harmony and depth.
               </p>
               <br />
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Each pairing reflects a deep understanding of flavor, balance, and the artistry
                 behind exceptional dining.
               </p>
@@ -364,12 +364,12 @@ export default function NewsPage() {
 
             {/* Text (Hover) */}
             <div className="absolute inset-0 bg-[var(--white)]/95 flex flex-col justify-center items-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Honoring a steadfast dedication to preserving authentic Italian traditions
                 through cherished recipes and time-honored culinary practices.
               </p>
               <br />
-              <p className="text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
+              <p className="text-sm md:text-lg leading-relaxed text-[var(--gray-dark)] text-justify">
                 Each dish reflects respect for heritage — keeping the spirit of classic
                 Italian dining alive for every guest.
               </p>
