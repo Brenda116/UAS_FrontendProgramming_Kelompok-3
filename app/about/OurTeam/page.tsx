@@ -354,7 +354,7 @@ export default function OurTeamPage() {
             Become a part of a team where every day is filled with flavor, creativity, and warmth.
           </p>
           <a
-            href="/contact" //Kathleen tolong link ke page u yaa
+            href="/contactloc"
             className="inline-flex items-center gap-3 bg-[var(--green-dark)] hover:bg-[var(--green)] text-[var(--white)] text-base md:text-xl font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 animate-fadeIn"
           >
             Contact Us Here!
