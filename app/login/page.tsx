@@ -1,8 +1,8 @@
 export default function LoginPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[url('/images/wall5.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="min-h-screen flex items-center justify-center bg-[url('/images/loginWall.png')] bg-cover bg-center bg-no-repeat">
             <main className="w-[90%] max-w-3xl mx-auto p-8 bg-black/30 backdrop-blur-sm rounded-2xl shadow-xl flex flex-col sm:flex-row items-center gap-8">
-                <div className="w-full sm:w-2/5 flex justify-left">
+                <div className="hidden sm:flex w-full sm:w-2/5 justify-start">
                     <img
                         src="/images/login.jpg"
                         alt="Login"
@@ -24,6 +24,7 @@ export default function LoginPage() {
                         />
                         <button className="bg-(--green) text-(--white) py-3 rounded cursor-pointer font-semibold">Login</button>
                     </form>
+                    <p className="text-center mt-4">Don't have an account yet? <a href="/signUp" className="text-(--green-light)"><strong>Sign Up</strong></a></p>
                     <div className="mt-6 text-center text-sm text-(--cream)">
                         © 2025 NOTTE AZZURA | All rights reserved.
                     </div>

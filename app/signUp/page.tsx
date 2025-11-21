@@ -1,8 +1,8 @@
-export default function LoginPage() {
+export default function SignUpPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[url('/images/wall5.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="min-h-screen flex items-center justify-center bg-[url('/images/signUpWall.png')] bg-cover bg-center bg-no-repeat">
             <main className="w-[90%] max-w-3xl mx-auto p-8 bg-black/30 backdrop-blur-sm rounded-2xl shadow-xl flex flex-col sm:flex-row items-center gap-8">
-                <div className="w-full sm:w-2/5 flex justify-left">
+                <div className="hidden sm:flex w-full sm:w-2/5 justify-start">
                     <img
                         src="/images/login.jpg"
                         alt="Login"
@@ -13,33 +13,34 @@ export default function LoginPage() {
                     <h1 className="text-2xl font-bold mb-4 text-center">Sign Up</h1>
                     <form className="flex flex-col gap-3">
                         <input
-                            className="border p-2 rounded"
+                            className="border p-3 rounded bg-white/20"
                             placeholder="Email"
                             type="email"
                         />
                         <input
-                            className="border p-2 rounded"
+                            className="border p-3 rounded bg-white/20"
                             placeholder="Password"
                             type="password"
                         />
                         <input
-                            className="border p-2 rounded"
+                            className="border p-3 rounded bg-white/20"
                             placeholder="Confirm Password"
                             type="password"
                         />
                         <input
-                            className="border p-2 rounded"
+                            className="border p-3 rounded bg-white/20"
                             placeholder="Full Name"
                             type="text"
                         />
                         <input
-                            className="border p-2 rounded"
+                            className="border p-3 rounded bg-white/20"
                             placeholder="Phone Number"
                             type="number"
                         />
-                        <button className="bg-(--green) text-(--white) py-2 rounded cursor-pointer">Login</button>
+                        <button className="bg-(--green) text-(--white) py-3 rounded cursor-pointer">Sign Up</button>
                     </form>
-                    <div className="mt-4 text-center text-sm text-(-cream)">
+                    <p className="text-center mt-4">Already have an account? <a href="/login" className="text-(--green-light)"><strong>Login</strong></a></p>
+                    <div className="mt-6 text-center text-sm text-(--cream)">
                         © 2025 NOTTE AZZURA | All rights reserved.
                     </div>
                 </div>
