@@ -161,9 +161,9 @@ export default function OurTeamPage() {
     <main className="min-h-500 bg-[var(--cream)] text-[var(--black)] font-playfair">
       
       {/* Hero */}
-      <section className="relative h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+      <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--red-dark)]/70 to-[var(--black)]/50"/>
-            <h1 className="relative text-5xl font-bold tracking-widest text-center font-playfair animate-fadeIn">
+            <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center font-playfair animate-fadeIn">
                 Our Team, Our Heart
             </h1>
       </section>
@@ -187,11 +187,11 @@ export default function OurTeamPage() {
         <div className="relative z-10 max-w-10xl mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-3 items-center">
           {/* Text (Left) */}
           <div>
-            <h2 className="mt-15 text-4xl tracking-widest text-[var(--cream)] pb-2 animate-fadeIn">
+            <h2 className="mt-15 text-3xl md:text-4xl tracking-widest text-[var(--cream)] pb-2 animate-fadeIn">
               The Soul of Notte Azzura
             </h2>
             <div className="border-b border-[var(--cream)] mt-3"></div>
-            <p className="mt-6 mb-15 text-md text-[var(--cream)] leading-relaxed animate-fadeIn">
+            <p className="mt-6 md:mb-15 text-sm md:text-md text-[var(--cream)] leading-relaxed animate-fadeIn">
               A passionate team united by a love for authentic Italian cuisine. From our talented chefs who craft
               timeless recipes with the finest ingredients to our dedicated staff who make every guest feel truly
               welcome — each member of Team Notte Azzura plays a vital role in creating an unforgettable dining
@@ -210,7 +210,7 @@ export default function OurTeamPage() {
               <img
                 src="/images/Pizza.gif"
                 alt="Our Team GIF"
-                className="w-130 h-100 object-cover opacity-15 hover:opacity-100 transition-opacity duration-500"
+                className="mb-5 w-130 h-60 md:h-100 object-cover opacity-15 hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -225,10 +225,10 @@ export default function OurTeamPage() {
         <h2 className="text-4xl font-playfair font-semibold text-[var(--red-dark)] text-center animate-fadeIn">
           Our Team Today
         </h2>
-        <p className="mt-2 text-center text-md italic text-[var(--gray-dark)] tracking-widest animate-fadeIn">
+        <p className="mt-2 text-center text-sm md:text-md italic text-[var(--gray-dark)] tracking-widest animate-fadeIn">
           — fresh from our kitchen to your table —
         </p>
-        <p className="mt-2 text-center text-md text-[var(--gray-dark)] animate-fadeIn">
+        <p className="mt-2 text-center text-sm md:text-md text-[var(--gray-dark)] animate-fadeIn">
           Meet the passionate individuals who make Notte Azzura a special place
         </p>
 
@@ -239,12 +239,12 @@ export default function OurTeamPage() {
             placeholder="Search our staff by name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-1/4 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
+            className="w-70 md:w-1/4 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
           />
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="w-1/4 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
+            className="w-40 md:w-1/4 px-4 py-2 rounded-full border border-[var(--green-dark)] focus:outline-none focus:ring-2 focus:ring-[var(--green-light)]"
           >
             <option value="all">All Staff</option>
             <option value="kitchen">Kitchen Staff</option>
@@ -256,7 +256,7 @@ export default function OurTeamPage() {
         {/* Staff */}
         <section className="mt-12">
           {/* Staff (Grid) */}
-          <div className="grid grid-cols-4 gap-10 animate-fadeIn">
+          <div className="grid grid-cols-2 md:grid-cols-4  gap-10 animate-fadeIn">
             {filteredStaff
               .slice((currentPage - 1) * 8, currentPage * 8)
               .map((staff) => (
@@ -325,12 +325,12 @@ export default function OurTeamPage() {
         <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Text */}
-        <div className="relative z-10 max-w-250 mx-auto">
+        <div className="relative z-10 max-w-110 md:max-w-250 mx-auto">
           <div className="bg-[var(--green-dark)]/90 text-[var(--white)] shadow-4xl p-12 text-center rounded-3xl opacity-80">
-            <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 tracking-widest animate-fadeIn">
+            <h2 className="text-xl md:text-4xl font-playfair font-semibold mb-6 tracking-widest animate-fadeIn">
               — Thank You to Our Team —
             </h2>
-            <p className="text-md leading-relaxed animate-fadeIn">
+            <p className="text-sm md:text-md leading-relaxed animate-fadeIn">
               We sincerely thank our incredible team for their dedication, passion, and hard work. Your commitment and teamwork have been essential in bringing the spirit of Notte Azzura to life. Each of you brings something special — from creativity in the kitchen to warmth in our service — and together, you make Notte Azzura more than just a restaurant. We are truly grateful for everything you do every day.
             </p>
           </div>
@@ -346,16 +346,16 @@ export default function OurTeamPage() {
           <h2 className="text-4xl md:text-5xl font-playfair font-semibold mb-2 animate-fadeIn">
             Want to Join the Notte Azzura Family?
           </h2>
-          <p className="text-center text-md text-[var(--green-dark)] tracking-widest italic animate-fadeIn">
+          <p className="text-center text-sm md:text-md text-[var(--green-dark)] tracking-widest italic animate-fadeIn">
             — We welcome all who share our passion for hospitality and authentic Italian cuisine! —
           </p>
-          <p className="text-xl text-[var(--gray-dark)] leading-relaxed mb-10 mt-6 animate-fadeIn">
+          <p className="text-base md:text-xl text-[var(--gray-dark)] leading-relaxed mb-10 mt-6 animate-fadeIn">
             We’re always looking for passionate individuals who share our love for authentic Italian cuisine.
             Become a part of a team where every day is filled with flavor, creativity, and warmth.
           </p>
           <a
-            href="/contact" //Kathleen tolong link ke page u yaa
-            className="inline-flex items-center gap-3 bg-[var(--green-dark)] hover:bg-[var(--green)] text-[var(--white)] text-lg md:text-xl font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 animate-fadeIn"
+            href="/contactloc"
+            className="inline-flex items-center gap-3 bg-[var(--green-dark)] hover:bg-[var(--green)] text-[var(--white)] text-base md:text-xl font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 animate-fadeIn"
           >
             Contact Us Here!
           </a>
