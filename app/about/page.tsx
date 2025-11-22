@@ -1,16 +1,22 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
     <main className="bg-[var(--cream)] text-[var(--red-dark)] min-h-70 font-playfair">
 
+      <Navbar />
+
       {/* Hero */}
-      <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+      <div className="pt-31 md:pt-31">
+      <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40"/>
         <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center animate-fadeIn">
           ABOUT US
         </h1>
       </section>
+      </div>
 
       {/* Our History Card */}
       <section className="flex flex-col md:flex-row bg-[var(--white)] shadow-lg rounded-3xl overflow-hidden mx-auto my-12 w-110 md:w-full max-w-screen-lg h-auto">
@@ -305,6 +311,8 @@ export default function AboutPage() {
           — mangiare bene è vivere bene —
         </p>
       </section>
+
+      <Footer />
 
     </main>
   );

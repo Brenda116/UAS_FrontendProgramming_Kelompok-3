@@ -8,7 +8,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <main className="font-playfair bg-(--red) fixed w-full z-1000 flex items-center justify-between px-6 py-4 shadow-md">
+        <main className="font-playfair bg-[var(--red)] fixed w-full z-1000 flex items-center justify-between px-6 py-4 shadow-md">
             <Link href="/">
                 <Image
                 src="/images/Logo.png"

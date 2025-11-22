@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface Staff {
   id: number;
@@ -14,13 +16,17 @@ export default function OurHistoryPage() {
   return (
     <main className="min-h-70 bg-[var(--cream)] text-[var(--black)] font-playfair">
     
+    <Navbar />
+
     {/* Hero */}
-      <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
+    <div className="pt-31 md:pt-31">
+      <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40" />
         <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center animate-fadeIn">
           OUR HISTORY
         </h1>
       </section>
+    </div>
 
     {/* Title Section - The Story Behind Notte Azzura */}
     <section className="md:mx-7 mt-20 px-8 md:px-16">
@@ -349,8 +355,11 @@ export default function OurHistoryPage() {
         </div>
     </section>
 
-    {/* Divider */}
-    <section className="relative w-full h-[10vh] md:h-[5vh] mx-auto mt-20 bg-[var(--red-dark)] flex items-center justify-center"></section>
+    {/* Footer */}
+    <div className="mt-8">
+    <Footer />
+    </div>
+    
     </main>
   );
 }
