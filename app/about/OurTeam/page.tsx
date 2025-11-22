@@ -1,5 +1,7 @@
 "use client";
 import { useRef, useEffect, useMemo, useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface Staff {
   id: number;
@@ -160,13 +162,17 @@ export default function OurTeamPage() {
   return (
     <main className="min-h-500 bg-[var(--cream)] text-[var(--black)] font-playfair">
       
+      <Navbar />
+      
       {/* Hero */}
+      <div className="pt-31 md:pt-31">
       <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--red-dark)]/70 to-[var(--black)]/50"/>
             <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center font-playfair animate-fadeIn">
                 Our Team, Our Heart
             </h1>
       </section>
+      </div>
 
       {/* Divider */}
       <section className="relative w-full h-[5vh] mx-auto bg-[var(--red-dark)] flex items-center justify-center bg-gradient-to-b from-[var(--red-dark)]/70 to-[var(--black)]/50"></section>
@@ -361,6 +367,9 @@ export default function OurTeamPage() {
           </a>
         </div>
       </section>
+
+      <Footer />
+
     </main>
   );
 }

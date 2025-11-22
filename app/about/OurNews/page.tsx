@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function NewsPage() {
   const newsArticles = [
@@ -147,8 +149,11 @@ export default function NewsPage() {
   return (
     <main className="min-h-500 bg-[var(--cream)] text-[var(--red-dark)] font-playfair">
       
+      <Navbar />
+
       {/* Hero */}
-      <section className="relative h-[55vh] flex flex-col items-center justify-center bg-[var(--red-dark)] text-[var(--white)] text-center">
+      <div className="pt-31 md:pt-31">
+      <section className="relative h-[45vh] md:h-[55vh] flex flex-col items-center justify-center bg-[var(--red-dark)] text-[var(--white)] text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/80 to-[var(--black)]/60" />
         <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold tracking-widest">
@@ -159,6 +164,7 @@ export default function NewsPage() {
           </p>
         </div>
       </section>
+      </div>
 
       {/* News Section */}
       <section ref={newsSectionRef} className="max-w-6xl mx-auto px-12 py-20">
@@ -387,6 +393,9 @@ export default function NewsPage() {
           Back to About Us
         </Link>
       </section>
+
+      <Footer />
+
     </main>
   );
 }
