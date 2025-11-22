@@ -1,31 +1,33 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { menuData } from '../../data/menuData'; 
+import { menuData, MenuItem } from '../../data/menuData'; 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const StarRating = ({ rating, reviews }: { rating: number; reviews: number }) => {
   const stars = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5;
     return (
-      <span key={index} className="text-[var(--gold)] text-xl">
+      <span key={index} className="text-[var(--gold)] text-lg"> 
         {rating >= index + 1 ? (
-          <i className="fas fa-star"></i> 
+          <i className="fas fa-star"></i>
         ) : rating >= number ? (
-          <i className="fas fa-star-half-alt"></i> 
+          <i className="fas fa-star-half-alt"></i>
         ) : (
-          <i className="far fa-star"></i> 
+          <i className="far fa-star"></i>
         )}
       </span>
     );
   });
 
   return (
-    <div className="flex items-center gap-2 mb-6">
+    <div className="flex items-center gap-2 mb-4"> 
       <div className="flex">{stars}</div>
-      <span className="text-[var(--gray-dark)] text-sm font-medium ml-2">
+      <span className="text-[var(--gray-dark)] text-xs font-medium ml-2">
         {rating} ({reviews} Reviews)
       </span>
     </div>
@@ -34,71 +36,93 @@ const StarRating = ({ rating, reviews }: { rating: number; reviews: number }) =>
 
 export default function MenuDetailPage() {
   const params = useParams();
-  const id = Number(params.id);
-  
-  const item = menuData.find((p) => p.id === id);
+  const [item, setItem] = useState<MenuItem | null>(null);
+
+  useEffect(() => {
+    if (params?.id) {
+      const foundItem = menuData.find((p) => p.id === Number(params.id));
+      setItem(foundItem || null);
+    }
+  }, [params]);
 
   if (!item) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--cream)] text-[var(--red-dark)]">
-        <h1 className="text-4xl font-bold mb-4">Menu Not Found</h1>
-        <Link href="/menu" className="underline">Back to Menu</Link>
+      <div className="min-h-screen flex flex-col bg-[var(--cream)]">
+        <Navbar />
+        <div className="flex-grow flex items-center justify-center text-[var(--red-dark)] pt-32">
+           <h1 className="text-3xl font-bold mb-4">Loading...</h1>
+        </div>
+        <Footer />
       </div>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[var(--cream)] text-[var(--black)] font-playfair flex items-center justify-center p-6 md:p-20">
+    <div className="flex flex-col min-h-screen bg-[var(--cream)] font-playfair">
       
-      <div className="max-w-6xl w-full bg-[var(--white)] rounded-4xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-fadeIn">
+      <Navbar />
+
+      <main className="flex-grow px-6 pt-38 pb-8"> 
         
-        <div className="w-full md:w-1/2 relative h-[400px] md:h-auto group">
-          <Image
-            src={item.imageUrl}
-            alt={item.name}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
-        </div>
-
-        <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center relative">
+        <div className="max-w-5xl mx-auto bg-[var(--white)] rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row animate-fadeIn">
           
-          <div className="mb-4">
-            <span className="bg-[var(--red-dark)] text-[var(--white)] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
-              {item.category}
-            </span>
+          <div className="w-full md:w-1/2 relative h-[300px] md:h-auto group">
+            <Image
+              src={item.imageUrl}
+              alt={item.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--red-dark)] mb-2 leading-tight">
-            {item.name}
-          </h1>
+          <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative">
+            
+            {/* Category Badge */}
+            <div className="mb-3">
+              <span className="bg-[var(--red-dark)] text-[var(--white)] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                {item.category}
+              </span>
+            </div>
 
-          <StarRating rating={item.rating || 0} reviews={item.reviews || 0} />
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--red-dark)] mb-1 leading-tight">
+              {item.name}
+            </h1>
 
-          <p className="text-3xl font-semibold text-[var(--green-dark)] mb-8">
-            Rp {item.price.toLocaleString('id-ID')}
-          </p>
+            {/* Rating Component */}
+            <StarRating rating={item.rating || 0} reviews={item.reviews || 0} />
 
-          <div className="w-20 h-1 bg-[var(--gold)] mb-8"></div>
-
-          <div className="mb-10">
-            <p className="text-[var(--gray-dark)] text-lg leading-relaxed text-justify">
-              {item.detailDesc || item.description}
+            {/* Price */}
+            <p className="text-2xl font-semibold text-[var(--green-dark)] mb-5">
+              Rp {item.price.toLocaleString('id-ID')}
             </p>
+
+            {/* Description Divider */}
+            <div className="w-16 h-1 bg-[var(--gold)] mb-5"></div>
+
+            {/* Detail Description */}
+            <div className="mb-6">
+              <p className="text-[var(--gray-dark)] text-base leading-relaxed text-justify">
+                {item.detailDesc || item.description}
+              </p>
+            </div>
+
+            {/* Back Button */}
+            <div className="mt-auto">
+              <Link href="/menu">
+                <button className="group flex items-center gap-2 text-[var(--red-dark)] font-bold text-base hover:text-[var(--red)] transition-colors">
+                  <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span> 
+                  Back to Menu List
+                </button>
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-auto">
-            <Link href="/menu">
-              <button className="group flex items-center gap-2 text-[var(--red-dark)] font-bold text-lg hover:text-[var(--red)] transition-colors">
-                <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span> 
-                Back to Menu List
-              </button>
-            </Link>
-          </div>
         </div>
+      </main>
 
-      </div>
-    </main>
+      <Footer />
+    </div>
   );
 }
