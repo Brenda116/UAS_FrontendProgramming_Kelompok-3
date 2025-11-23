@@ -200,6 +200,17 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Divider Hero */}
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[#821F06] text-white">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[#E1D9CB] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
+
       {/* Contact CTA Section */}
       <section className="max-w-[90%] md:max-w-6xl mx-auto my-12 px-6 mb-16">
         <div className="relative rounded-3xl shadow-xl p-10 md:p-14 text-center text-white overflow-hidden">
