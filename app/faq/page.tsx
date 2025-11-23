@@ -121,19 +121,56 @@ export default function FAQPage() {
 
       {/* Quick Stats Cards */}
       <section className="max-w-[90%] md:max-w-6xl mx-auto my-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
-          <div className="text-5xl font-bold text-[var(--red)] mb-3 animate-fadeIn">15+</div>
-          <div className="text-[var(--gray-dark)] text-lg animate-fadeIn">Pizza Varieties</div>
+        <div className="relative bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-center"
+            style={{
+              backgroundImage: "url('/images/cardPizzaFAQ1.webp')"
+            }}
+          />
+          <div className="absolute inset-0 bg-black/55"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="text-5xl font-bold text-[var(--gold)] mb-3 animate-fadeIn">15+</div>
+            
+            <div className="text-[var(--cream)] text-lg font-semibold animate-fadeIn">Pizza Varieties</div>
+          </div>
         </div>
 
-        <div className="bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
-          <div className="text-5xl font-bold text-[var(--green)] mb-3 animate-fadeIn">30min</div>
-          <div className="text-[var(--gray-dark)] text-lg animate-fadeIn">Average Prep Time</div>
+        <div className="relative bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-center"
+            style={{
+              backgroundImage: "url('/images/cardPizzaFAQ2.webp')"
+            }}
+          />
+          <div className="absolute inset-0 bg-black/55"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="text-5xl font-bold text-[var(--green)] mb-3 animate-fadeIn">30min</div>
+            <div className="text-[var(--cream)] text-lg font-semibold animate-fadeIn">Average Prep Time</div>
+          </div>
         </div>
 
-        <div className="bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
-          <div className="text-5xl font-bold text-[var(--red)] mb-3 animate-fadeIn">5★</div>
-          <div className="text-[var(--gray-dark)] text-lg animate-fadeIn">Customer Rating</div>
+        <div className="relative bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-center"
+            style={{
+              backgroundImage: "url('/images/cardPizzaFAQ3.webp')"
+            }}
+          />
+          <div className="absolute inset-0 bg-black/55"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="text-5xl font-bold text-[var(--gold)] mb-3 animate-fadeIn">5★</div>
+            <div className="text-[var(--cream)] text-lg font-semibold animate-fadeIn">Customer Rating</div>
+          </div>
         </div>
       </section>
 
@@ -210,11 +247,9 @@ export default function FAQPage() {
         </p>
       </section>
 
-
       {/* Contact CTA Section */}
       <section className="max-w-[90%] md:max-w-6xl mx-auto my-12 px-6 mb-16">
-        <div className="relative rounded-3xl shadow-xl p-10 md:p-14 text-center text-white overflow-hidden">
-
+        <div className="relative rounded-3xl shadow-lg p-10 md:p-14 text-center text-white overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           {/* Background image */}
           <div className="absolute inset-0 bg-[url('/images/faqBawah.jpeg')] bg-center"></div>
           <div className="absolute inset-0 bg-black/55"></div>

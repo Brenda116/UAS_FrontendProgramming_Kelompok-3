@@ -167,6 +167,17 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Divider Hero */}
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[#821F06] text-white">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[#E1D9CB] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
+
       {/* Featured Service Detail */}
       <section className="max-w-[90%] md:max-w-6xl mx-auto my-16 px-6">
         <div className="bg-[var(--white)] rounded-3xl shadow-xl overflow-hidden">
