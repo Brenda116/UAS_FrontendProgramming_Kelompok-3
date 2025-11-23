@@ -282,9 +282,16 @@ export default function OurHistoryPage() {
         </div>
     </section>
 
-    {/* Divider */}
-    <section className="relative w-full h-[10vh] md:h-[5vh] mx-auto mt-20 bg-[var(--red-dark)] flex items-center justify-center"></section>
-
+    {/* Divider Hero */}
+    <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
+    <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+        NOTTE AZZURA
+    </h2>
+    <p className="mt-2 text-base italic text-[var(--cream)] tracking-widest animate-fadeIn delay-200">
+        — mangiare bene è vivere bene —
+    </p>
+    </section>
+    
     {/* Memorable Moments */}
     <section className="max-w-270 mx-auto mt-20 px-16">
         {/* Section Title */}
