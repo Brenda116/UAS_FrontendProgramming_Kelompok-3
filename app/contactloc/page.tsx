@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -9,8 +10,55 @@ export default function ContactPage() {
     name: "",
     message: ""
   });
+  
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
+  const [currentFormImage, setCurrentFormImage] = useState(0);
+  const [currentEventImage, setCurrentEventImage] = useState(0);
+  const [currentSocialIcon, setCurrentSocialIcon] = useState(0);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const formImages = [
+    "https://i.pinimg.com/1200x/5c/6a/d4/5c6ad4d9a9440ca979884e8e3b17eaf2.jpg",
+    "https://i.pinimg.com/736x/b2/55/88/b255882221116dea71f84377d4406b38.jpg",
+    "https://i.pinimg.com/1200x/69/16/23/691623d9001418e653a58f2fa2517fd2.jpg"
+  ];
+
+  const eventImages = [
+    "https://i.pinimg.com/736x/16/2c/87/162c87b619a9761f33afeda1616c235f.jpg",
+    "https://i.pinimg.com/736x/74/88/fe/7488fe51f334051a39bfefc0229205ae.jpg",
+    "https://i.pinimg.com/736x/c5/98/50/c59850de0769bca7dfc25d2133b287e9.jpg"
+  ];
+
+  const socialIcons = [
+    { name: "Instagram", path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" },
+    { name: "Facebook", path: "M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" },
+    { name: "TikTok", path: "M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" },
+  ];
+
+  useEffect(() => {
+    setIsVisible(true);
+
+    const formImageInterval = setInterval(() => {
+      setCurrentFormImage((prev) => (prev + 1) % formImages.length);
+    }, 5000);
+
+    const eventImageInterval = setInterval(() => {
+      setCurrentEventImage((prev) => (prev + 1) % eventImages.length);
+    }, 5000);
+
+    const socialIconInterval = setInterval(() => {
+      setCurrentSocialIcon((prev) => (prev + 1) % socialIcons.length);
+    }, 4000);
+
+    return () => {
+      clearInterval(formImageInterval);
+      clearInterval(eventImageInterval);
+      clearInterval(socialIconInterval);
+    };
+  }, []);
+
+  const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -18,176 +66,380 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
+  const handleSubmit = () => {
+    setFormStatus("sending");
+    setTimeout(() => {
+      setFormStatus("success");
+      setFormData({ email: "", name: "", message: "" });
+      setTimeout(() => setFormStatus(""), 3000);
+    }, 1500);
+  };
+
+  const handleNewsletterSubmit = () => {
+    console.log("Newsletter signup:", newsletterEmail);
+    setNewsletterEmail("");
+    alert("Thank you for subscribing to our newsletter!");
   };
 
   return (
-    <div className="contact-page">
-      {/* Header Section */}
-      <header className="contact-header">
-        <div className="contact-header-content">
-          <h1 className="contact-title">Contact Us</h1>
-          <p className="contact-subtitle">
-            Get in touch with Notte Azzurra. We're here to help with your Italian culinary needs.
+    <>
+    <Navbar />
+    <main className="bg-[#E1D9CB] text-[#821F06] min-h-screen font-serif">
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+          0% { background-position: -1000px 0; }
+          100% { background-position: 1000px 0; }
+        }
+
+        @keyframes shine {
+          0% { left: -100%; }
+          100% { left: 100%; }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.8s ease-out;
+        }
+
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .hover-shimmer {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hover-shimmer::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transition: left 0.5s;
+        }
+
+        .hover-shimmer:hover::before {
+          left: 100%;
+        }
+
+        .hover-shine {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hover-shine::after {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -100%;
+          width: 50%;
+          height: 200%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+          transform: rotate(25deg);
+          animation: shine 3s infinite;
+        }
+
+        .hover-float:hover {
+          animation: float 1s ease-in-out infinite;
+        }
+
+        .hover-pulse:hover {
+          animation: pulse 1s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* Hero Section */}
+      <div className="pt-16 md:pt-20">
+        <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-gradient-to-b from-[#821F06] to-[#E1D9CB] text-white">
+          <h1 className="relative text-4xl md:text-5xl font-bold tracking-widest text-center animate-fadeIn">
+            CONTACT US
+          </h1>
+        </section>
+      </div>
+
+      {/* Contact Information Cards */}
+      <section className="flex flex-col md:flex-row bg-white shadow-lg rounded-3xl overflow-hidden mx-auto my-12 w-[90%] md:w-full max-w-screen-lg hover-shimmer transition-all duration-300 hover:shadow-2xl animate-fadeIn">
+        <div className="w-full md:w-1/3 flex flex-col justify-center items-center p-8 text-center border-b md:border-b-0 md:border-r border-[#E1D9CB] hover:bg-[#F9F7F4] transition-all duration-300">
+          <div className="w-16 h-16 bg-[#7D8D36] rounded-full flex items-center justify-center mb-4 hover-pulse transition-all duration-300 hover:bg-[#9AAA52]">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-semibold text-[#821F06] mb-2">Phone</h3>
+          <p className="text-[#821F06] font-medium text-lg">+44 20 7946 0958</p>
+          <p className="text-[#8A837A] text-sm mt-1">Mon - Sat: 9AM - 8PM</p>
+        </div>
+
+        <div className="w-full md:w-1/3 flex flex-col justify-center items-center p-8 text-center border-b md:border-b-0 md:border-r border-[#E1D9CB] hover:bg-[#F9F7F4] transition-all duration-300">
+          <div className="w-16 h-16 bg-[#7D8D36] rounded-full flex items-center justify-center mb-4 hover-pulse transition-all duration-300 hover:bg-[#9AAA52]">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-semibold text-[#821F06] mb-2">Email</h3>
+          <p className="text-[#821F06] font-medium">hello@notteazzurra.co.uk</p>
+          <p className="text-[#8A837A] text-sm mt-1">We reply within 24 hours</p>
+        </div>
+
+        <div className="w-full md:w-1/3 flex flex-col justify-center items-center p-8 text-center hover:bg-[#F9F7F4] transition-all duration-300">
+          <div className="w-16 h-16 bg-[#7D8D36] rounded-full flex items-center justify-center mb-4 hover-pulse transition-all duration-300 hover:bg-[#9AAA52]">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-semibold text-[#821F06] mb-2">Location</h3>
+          <p className="text-[#821F06] font-medium">London Eye, UK</p>
+          <p className="text-[#8A837A] text-sm mt-1">Riverside Building, County Hall</p>
+        </div>
+      </section>
+
+      {/* Get In Touch Form Card */}
+      <section className="flex flex-col md:flex-row bg-white shadow-lg rounded-3xl overflow-hidden mx-auto my-12 w-[90%] md:w-full max-w-screen-lg h-auto hover-shimmer transition-all duration-300 hover:shadow-2xl animate-fadeIn">
+        <div className="h-60 md:h-auto w-full md:w-1/2 overflow-hidden relative">
+          {formImages.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt="Restaurant Interior"
+              className={`w-full h-full object-cover absolute top-0 left-0 transition-all duration-1000 ${
+                index === currentFormImage ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-10">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#821F06] mb-4 animate-fadeIn">
+            Get In Touch
+          </h2>
+          <p className="text-sm text-[#7D8D36] italic uppercase tracking-widest mb-4 animate-fadeIn">
+            — We'd Love to Hear From You —
           </p>
+          <p className="text-sm md:text-base text-[#4A453E] leading-relaxed mb-6 animate-fadeIn">
+            Have a question about our authentic Italian cuisine? Want to make a reservation or discuss catering options? Send us a message and we'll get back to you soon.
+          </p>
+
+          <div className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border border-[#D3CDC4] rounded-lg focus:outline-none focus:border-[#7D8D36] transition duration-300" />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border border-[#D3CDC4] rounded-lg focus:outline-none focus:border-[#7D8D36] transition duration-300" />
+
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows={4}
+              className="w-full px-4 py-3 border border-[#D3CDC4] rounded-lg focus:outline-none focus:border-[#7D8D36] transition duration-300 resize-none" />
+
+            <button
+              onClick={handleSubmit}
+              className="w-full px-6 py-3 bg-[#821F06] text-white text-base font-medium rounded-full shadow-md hover:bg-[#601504] transition-all duration-300 hover:shadow-xl hover-shine transform hover:-translate-y-1"
+              disabled={formStatus === "sending"}
+            >
+              {formStatus === "sending" ? "Sending..." : "Send Message"}
+            </button>
+
+            {formStatus === "success" && (
+              <div className="text-center text-[#7D8D36] font-medium animate-fadeIn">
+                ✓ Message sent successfully! We'll get back to you soon.
+              </div>
+            )}
+          </div>
         </div>
-      </header>
+      </section>
 
-      {/* Main Content */}
-      <main className="contact-main">
-        {/* Contact Cards */}
-        <div className="contact-cards">
-          {/* Phone Card */}
-          <div className="contact-card">
-            <div className="contact-card-icon">
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <h3 className="contact-card-title">Phone</h3>
-            <p className="contact-card-main">+44 20 7946 0958</p>
-            <p className="contact-card-sub">Mon - Sat: 9AM - 8PM</p>
+      {/* Our Location Card */}
+      <section className="group flex flex-col md:flex-row bg-white shadow-lg rounded-3xl overflow-hidden mx-auto my-12 w-[90%] md:w-full max-w-screen-lg h-auto relative transition-all duration-500 hover-shimmer hover:shadow-2xl animate-fadeIn">
+        <div className="relative w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 text-center overflow-hidden">
+          <div className="transition-opacity duration-500 group-hover:opacity-0">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#821F06] mb-4 animate-fadeIn">
+              Our Location
+            </h2>
           </div>
 
-          {/* Email Card */}
-          <div className="contact-card">
-            <div className="contact-card-icon">
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 className="contact-card-title">Email</h3>
-            <p className="contact-card-main">hello@notteazzurra.co.uk</p>
-            <p className="contact-card-sub">We reply within 24 hours</p>
-          </div>
-
-          {/* Location Card */}
-          <div className="contact-card">
-            <div className="contact-card-icon">
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <h3 className="contact-card-title">Location</h3>
-            <p className="contact-card-main">London Eye, UK</p>
-            <p className="contact-card-sub">Riverside Building, County Hall</p>
-          </div>
-        </div>
-
-        {/* Two Column Grid */}
-        <div className="contact-grid">
-          {/* Contact Form */}
-          <div className="contact-form-wrapper">
-            <h2 className="form-title">Get In Touch !</h2>
-            <p className="form-description">
-              Have a question about our authentic Italian cuisine? Want to make a reservation or discuss catering options? Send us a message and we'll get back to you soon.
+          <div className="space-y-3 text-base md:text-lg leading-relaxed text-[#4A453E] max-w-md text-justify transition-opacity duration-500 group-hover:opacity-0">
+            <p className="text-sm text-[#7D8D36] italic uppercase tracking-widest animate-fadeIn">
+              — Visit Us at the Iconic London Eye —
             </p>
-            
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="form-input"
-                />
-              </div>
-              
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="form-input"
-                />
-              </div>
-              
-              <div className="form-group">
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  className="form-textarea"
-                />
-              </div>
-              
-              <button type="submit" className="form-submit-btn">
-                Submit Button
-              </button>
-            </form>
+            <p className="animate-fadeIn text-sm">
+              <strong>Notte Azzura near London Eye</strong><br />
+              Riverside Building, County Hall,<br />
+              Westminster Bridge Rd,<br />
+              London SE1 7PB, United Kingdom
+            </p>
           </div>
 
-          {/* Location & Social Media */}
-          <div className="location-social-wrapper">
-            {/* Our Location */}
-            <div className="location-section">
-              <h2 className="section-title">Our Location</h2>
-              <p className="section-description">
-                Visit us at the iconic London Eye. Experience authentic Italian flavors with a stunning Thames-side view.
-              </p>
-              
-              <div className="location-details">
-                <h3 className="location-name">Notte Azzurra near London Eye</h3>
-                <p className="location-address">Riverside Building, County Hall,</p>
-                <p className="location-address">Westminster Bridge Rd, London SE1 7PB,</p>
-                <p className="location-address">United Kingdom</p>
-                <a href="#" className="location-link">View larger map</a>
-              </div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 md:px-10 text-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="text-sm md:text-lg leading-relaxed text-[#4A453E] max-w-md text-justify">
+              Experience authentic Italian flavors with a stunning Thames-side view. Our riverside location offers the perfect backdrop for an unforgettable dining experience.
+            </p>
+            <br />
+            <p className="text-sm md:text-lg leading-relaxed text-[#4A453E] max-w-md text-justify">
+              Whether you're celebrating a special occasion or enjoying a casual meal, our prime location near the London Eye makes every visit memorable.
+            </p>
+          </div>
+        </div>
 
-              {/* Map Placeholder */}
-              <div className="map-container">
-                <div className="map-placeholder">
-                  <svg className="map-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p>London Eye Area</p>
-                </div>
-              </div>
-            </div>
+        <div className="w-full md:w-1/2 h-64 md:h-auto">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.540799914099!2d-0.11957!3d51.503187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c7c7eb9be3%3A0x3918653583725b56!2sRiverside%20Building%2C%20County%20Hall%2C%20Westminster%20Bridge%20Rd%2C%20London%20SE1%207PB%2C%20UK!5e0!3m2!1sen!2sus!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="transition-all duration-300 hover:brightness-95"
+          ></iframe>
+        </div>
+      </section>
 
-            {/* Social Media */}
-            <div className="social-section">
-              <h2 className="section-title">Social Media</h2>
-              <div className="social-icons">
-                <a href="#" className="social-icon" aria-label="Facebook">
-                  <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="#" className="social-icon" aria-label="Twitter">
-                  <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
-                <a href="#" className="social-icon" aria-label="Instagram">
-                  <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
-                  </svg>
-                </a>
-                <a href="#" className="social-icon" aria-label="WordPress">
-                  <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C5.199 3.382 8.362 1.5 12 1.5c2.689 0 5.133 1.033 6.965 2.721-.044-.008-.09-.011-.137-.011-1.064 0-1.818.923-1.818 1.914 0 .888.513 1.643 1.066 2.531.415.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.607-3.582.607M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/>
-                  </svg>
-                </a>
-              </div>
+      {/* Divider Hero */}
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[#821F06] text-white">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[#E1D9CB] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
+      {/* Events CTA and Social Media */}
+      <section className="max-w-[90%] md:max-w-screen-lg mx-auto my-14 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fadeIn">
+        {/* Events */}
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 pb-8 hover-shimmer transform hover:-translate-y-2">
+          <div className="overflow-hidden w-full h-64 relative">
+            {eventImages.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt="Events"
+                className={`w-full h-full object-cover absolute top-0 left-0 transition-all duration-1000 ${
+                  index === currentEventImage ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+                }`}
+              />
+            ))}
+          </div>
+          <div className="p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#821F06] mb-3 animate-fadeIn">
+              Upcoming Events
+            </h3>
+            <p className="text-[#4A453E] text-base leading-relaxed animate-fadeIn">
+              Join us for exclusive Italian culinary experiences, wine tastings, cooking classes, and special holiday celebrations.
+            </p>
+          </div>
+          <a
+            href="/events"
+            className="px-6 py-2 bg-[#821F06] text-white text-base rounded-full shadow-md hover:bg-[#601504] transition-all duration-300 hover:shadow-xl hover-shine transform hover:-translate-y-1"
+          >
+            Explore Events →
+          </a>
+        </div>
+
+        {/* Social Media */}
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 pb-8 hover-shimmer transform hover:-translate-y-2">
+          <div className="w-full h-64 bg-gradient-to-br from-[#7D8D36] to-[#9AAA52] flex items-center justify-center overflow-hidden relative">
+            {socialIcons.map((icon, index) => (
+              <svg 
+                key={index}
+                className={`w-24 h-24 text-white absolute transition-all duration-1000 ${
+                  index === currentSocialIcon ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 rotate-180'
+                }`}
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d={icon.path} />
+              </svg>
+            ))}
+          </div>
+          <div className="p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#821F06] mb-3 animate-fadeIn">
+              Follow Us
+            </h3>
+            <p className="text-[#4A453E] text-base leading-relaxed mb-4 animate-fadeIn">
+              Stay connected for daily specials, behind-the-scenes content, and Italian culinary inspiration!
+            </p>
+            <div className="flex gap-4 justify-center">
+              <a href="#" className="w-12 h-12 bg-[#7D8D36] rounded-full flex items-center justify-center hover:bg-[#9AAA52] transition-all duration-300 hover-shine transform hover:scale-110 hover:rotate-12">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                </svg>
+              </a>
+              <a href="#" className="w-12 h-12 bg-[#7D8D36] rounded-full flex items-center justify-center hover:bg-[#9AAA52] transition-all duration-300 hover-shine transform hover:scale-110 hover:rotate-12">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <a href="#" className="w-12 h-12 bg-[#7D8D36] rounded-full flex items-center justify-center hover:bg-[#9AAA52] transition-all duration-300 hover-shine transform hover:scale-110 hover:rotate-12">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+      
+      {/* Final Divider */}
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-[#E1D9CB] to-[#821F06] pb-20">
+      <section className="bg-white rounded-3xl shadow-lg overflow-hidden mx-auto my-14 w-[90%] md:w-full max-w-screen-lg p-8 md:p-12 text-center hover-shimmer transition-all duration-300 hover:shadow-2xl animate-fadeIn">
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#821F06] mb-4 animate-fadeIn">
+          Subscribe to Our Newsletter
+        </h2>
+        <p className="text-sm text-[#7D8D36] italic uppercase tracking-widest mb-6 animate-fadeIn">
+          — Stay Connected With Notte Azzura —
+        </p>
+        <p className="text-[#4A453E] text-base mb-8 max-w-2xl mx-auto">
+          Get exclusive recipes, special offers, and be the first to know about our events and new menu items!
+        </p>
+        <div className="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={newsletterEmail}
+            onChange={(e) => setNewsletterEmail(e.target.value)}
+            className="flex-1 px-6 py-3 border border-[#D3CDC4] rounded-full focus:outline-none focus:border-[#7D8D36] transition-all duration-300 focus:shadow-lg" />
+          <button
+            onClick={handleNewsletterSubmit}
+            className="px-8 py-3 bg-[#821F06] text-white text-base font-medium rounded-full shadow-md hover:bg-[#601504] transition-all duration-300 hover:shadow-xl hover-shine transform hover:-translate-y-1 whitespace-nowrap"
+          >
+            Subscribe Now
+          </button>
+        </div>
+      </section>
+      </section>
+    </main>
+    <Footer/></>
   );
 }
