@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-shimmer: shimmer 5s linear infinite;
+  --animate-breathe: breathe 3s ease-in-out infinite;
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+}
+
 @keyframes slideInLeft {
   from {
     opacity: 0;

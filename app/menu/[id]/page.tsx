@@ -12,7 +12,7 @@ const StarRating = ({ rating, reviews }: { rating: number; reviews: number }) =>
   const stars = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5;
     return (
-      <span key={index} className="text-[var(--gold)] text-lg"> 
+      <span key={index} className="text-[var(--gold)] text-lg">
         {rating >= index + 1 ? (
           <i className="fas fa-star"></i>
         ) : rating >= number ? (
@@ -25,7 +25,7 @@ const StarRating = ({ rating, reviews }: { rating: number; reviews: number }) =>
   });
 
   return (
-    <div className="flex items-center gap-2 mb-4"> 
+    <div className="flex items-center gap-2 mb-4">
       <div className="flex">{stars}</div>
       <span className="text-[var(--gray-dark)] text-xs font-medium ml-2">
         {rating} ({reviews} Reviews)
@@ -62,7 +62,7 @@ export default function MenuDetailPage() {
       
       <Navbar />
 
-      <main className="flex-grow px-6 pt-38 pb-8"> 
+      <main className="flex-grow px-6 pt-36 pb-10">
         
         <div className="max-w-5xl mx-auto bg-[var(--white)] rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row animate-fadeIn">
           
@@ -74,49 +74,59 @@ export default function MenuDetailPage() {
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+            
+            {item.isPromo && (
+               <div className="absolute top-4 left-4 bg-[var(--red)] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md animate-pulse">
+                  PROMO
+               </div>
+            )}
           </div>
 
           <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative">
             
-            {/* Category Badge */}
             <div className="mb-3">
               <span className="bg-[var(--red-dark)] text-[var(--white)] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                {item.category}
+                {item.category == 'food' ? 'PIZZA' : 'DRINKS'}
               </span>
             </div>
 
-            {/* Title */}
             <h1 className="text-3xl md:text-4xl font-bold text-[var(--red-dark)] mb-1 leading-tight">
               {item.name}
             </h1>
 
-            {/* Rating Component */}
             <StarRating rating={item.rating || 0} reviews={item.reviews || 0} />
 
-            {/* Price */}
             <p className="text-2xl font-semibold text-[var(--green-dark)] mb-5">
               Rp {item.price.toLocaleString('id-ID')}
             </p>
 
-            {/* Description Divider */}
             <div className="w-16 h-1 bg-[var(--gold)] mb-5"></div>
 
-            {/* Detail Description */}
             <div className="mb-6">
               <p className="text-[var(--gray-dark)] text-base leading-relaxed text-justify">
                 {item.detailDesc || item.description}
               </p>
             </div>
 
-            {/* Back Button */}
-            <div className="mt-auto">
+            <div className="mt-auto flex flex-col gap-3 items-start">
               <Link href="/menu">
                 <button className="group flex items-center gap-2 text-[var(--red-dark)] font-bold text-base hover:text-[var(--red)] transition-colors">
                   <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span> 
-                  Back to Menu List
+                  Back to Menu
                 </button>
               </Link>
+
+              {/* tombol ke halaman promo (muncul kalo si itemnya promo) */}
+              {item.isPromo && (
+                <Link href="/promotions">
+                  <button className="group flex items-center gap-2 text-[var(--gold)] font-bold text-base hover:text-[var(--orange)] transition-colors">
+                    <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span> 
+                    Promos & Deals
+                  </button>
+                </Link>
+              )}
             </div>
+
           </div>
 
         </div>
