@@ -109,7 +109,7 @@ export default function FAQPage() {
         <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-[var(--red-dark)] text-[var(--white)]">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--black)]/40"/>
           <div className="relative text-center px-4">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-widest animate-fadeIn">
+            <h1 className="text-4xl md:text-5xl font-playfair font-bold tracking-widest animate-fadeIn">
               FREQUENTLY ASKED QUESTIONS
             </h1>
             <p className="mt-4 text-base md:text-lg italic text-[var(--cream)] tracking-wide animate-fadeIn">
@@ -121,19 +121,56 @@ export default function FAQPage() {
 
       {/* Quick Stats Cards */}
       <section className="max-w-[90%] md:max-w-6xl mx-auto my-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
-          <div className="text-5xl font-bold text-[var(--red)] mb-3 animate-fadeIn">15+</div>
-          <div className="text-[var(--gray-dark)] text-lg animate-fadeIn">Pizza Varieties</div>
+        <div className="relative bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-center"
+            style={{
+              backgroundImage: "url('/images/cardPizzaFAQ1.webp')"
+            }}
+          />
+          <div className="absolute inset-0 bg-black/55"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="text-5xl font-playfair font-bold text-[var(--gold)] mb-3 animate-fadeIn">15+</div>
+            
+            <div className="text-[var(--cream)] text-lg font-playfair font-bold animate-fadeIn">Pizza Varieties</div>
+          </div>
         </div>
 
-        <div className="bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
-          <div className="text-5xl font-bold text-[var(--green)] mb-3 animate-fadeIn">30min</div>
-          <div className="text-[var(--gray-dark)] text-lg animate-fadeIn">Average Prep Time</div>
+        <div className="relative bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-center"
+            style={{
+              backgroundImage: "url('/images/cardPizzaFAQ2.webp')"
+            }}
+          />
+          <div className="absolute inset-0 bg-black/55"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="text-5xl font-playfair font-bold text-[var(--green)] mb-3 animate-fadeIn">30min</div>
+            <div className="text-[var(--cream)] text-lg font-playfair font-bold animate-fadeIn">Average Prep Time</div>
+          </div>
         </div>
 
-        <div className="bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
-          <div className="text-5xl font-bold text-[var(--red)] mb-3 animate-fadeIn">5★</div>
-          <div className="text-[var(--gray-dark)] text-lg animate-fadeIn">Customer Rating</div>
+        <div className="relative bg-[var(--white)] rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-center"
+            style={{
+              backgroundImage: "url('/images/cardPizzaFAQ3.webp')"
+            }}
+          />
+          <div className="absolute inset-0 bg-black/55"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="text-5xl font-playfair font-bold text-[var(--gold)] mb-3 animate-fadeIn">5★</div>
+            <div className="text-[var(--cream)] text-lg font-playfair font-bold animate-fadeIn">Customer Rating</div>
+          </div>
         </div>
       </section>
 
@@ -142,7 +179,7 @@ export default function FAQPage() {
         <div className="bg-[var(--white)] rounded-3xl shadow-lg p-8 md:p-12">
           {faqData.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-12 last:mb-0">
-              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--red-dark)] mb-6 pb-4 border-b-4 border-[var(--green)] animate-fadeIn">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[var(--red-dark)] mb-6 pb-4 border-b-4 border-[var(--green)] animate-fadeIn">
                 {category.category}
               </h2>
 
@@ -166,7 +203,7 @@ export default function FAQPage() {
                             : 'bg-white text-[var(--black)] hover:bg-[var(--cream)]'
                         }`}
                       >
-                        <span className="text-lg font-semibold pr-4">{item.question}</span>
+                        <span className="text-lg font-playfair font-bold pr-4">{item.question}</span>
                         <svg
                           className={`flex-shrink-0 w-6 h-6 transition-transform duration-300 ${
                             isOpen ? 'rotate-180' : 'rotate-0'
@@ -200,16 +237,25 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Divider Hero */}
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-14 flex flex-col items-center justify-center text-center bg-[var(--red-dark)] text-[var(--white)]">
+        <h2 className="text-3xl md:text-4xl font-playfair font-bold tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[var(--cream)] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
       {/* Contact CTA Section */}
       <section className="max-w-[90%] md:max-w-6xl mx-auto my-12 px-6 mb-16">
-        <div className="relative rounded-3xl shadow-xl p-10 md:p-14 text-center text-white overflow-hidden">
-
+        <div className="relative rounded-3xl shadow-lg p-10 md:p-14 text-center text-white overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           {/* Background image */}
           <div className="absolute inset-0 bg-[url('/images/faqBawah.jpeg')] bg-center"></div>
           <div className="absolute inset-0 bg-black/55"></div>
 
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fadeIn">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 animate-fadeIn">
               Still Have Questions?
             </h2>
 
@@ -220,14 +266,14 @@ export default function FAQPage() {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <button
                 onClick={() => window.location.href = '/contactloc'}
-                className="px-8 py-3 bg-[var(--green)] text-white text-lg font-semibold rounded-full shadow-lg hover:bg-[var(--green-light)] transition duration-300"
+                className="px-8 py-3 bg-[var(--green)] text-white text-lg font-playfair font-bold rounded-full shadow-lg hover:bg-[var(--green-light)] transition duration-300"
               >
                 Contact Us
               </button>
 
               <a
                 href="tel:+442079460958"
-                className="px-8 py-3 bg-white text-[var(--red-dark)] text-lg font-semibold rounded-full shadow-lg hover:bg-[var(--cream)] transition duration-300"
+                className="px-8 py-3 bg-white text-[var(--red-dark)] text-lg font-playfair font-bold rounded-full shadow-lg hover:bg-[var(--cream)] transition duration-300"
               >
                 Call Us Now
               </a>

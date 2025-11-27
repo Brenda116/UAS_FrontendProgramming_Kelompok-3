@@ -174,16 +174,13 @@ export default function OurTeamPage() {
       </section>
       </div>
 
-      {/* Divider */}
-      <section className="relative w-full h-[5vh] mx-auto bg-[var(--red-dark)] flex items-center justify-center bg-gradient-to-b from-[var(--red-dark)]/70 to-[var(--black)]/50"></section>
-
       {/* Title Section - The Soul of Notte Azzura */}
       <section className="relative w-full min-h-[90vh] flex items-center justify-center text-[var(--white)] overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/Kitchen.jpg')",
+            backgroundImage: "url('/images/signUpWall.png')",
           }}
         ></div>
         {/* Dim Image */}
@@ -223,8 +220,6 @@ export default function OurTeamPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <section className="relative w-full h-[15vh] mx-auto bg-[var(--red-dark)] flex items-center justify-center bg-gradient-to-b from-[var(--red-dark)]/60 to-[var(--cream)]"></section>
 
       {/* Our Team Today */}
       <section ref={teamSectionRef} className="max-w-screen-2xl mx-auto mt-16 px-6 md:px-16">
@@ -324,7 +319,7 @@ export default function OurTeamPage() {
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-center grayscale-50"
           style={{
-            backgroundImage: "url('/images/Passions.jpg')",
+            backgroundImage: "url('/images/loginWall.png')",
           }}
         ></div>
         {/* Dim Image */}
