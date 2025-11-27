@@ -18,3 +18,49 @@ model User {
   password  String
   createdAt DateTime @default(now())
 }
+
+model Event {
+  id            Int                  @id @default(autoincrement())
+  slug          String               @unique
+  title         String
+  date          DateTime
+  time          String
+  price         Float
+  category      String
+
+  // SQLite TIDAK BISA String[]
+  // → gunakan JSON
+  images        Json
+  highlights    Json
+
+  shortDesc     String
+  fullDesc      String
+
+  capacity      Int
+  registered    Int                  @default(0)
+  createdAt     DateTime             @default(now())
+  updatedAt     DateTime             @updatedAt
+  registrations EventRegistration[]
+
+  @@index([category])
+  @@index([date])
+}
+
+model EventRegistration {
+  id        Int      @id @default(autoincrement())
+  eventId   Int
+  name      String
+  email     String
+  phone     String
+  guests    Int      @default(1)
+
+  // @db.Text tidak boleh
+  message   String?
+
+  createdAt DateTime @default(now())
+
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@index([eventId])
+  @@index([email])
+}
