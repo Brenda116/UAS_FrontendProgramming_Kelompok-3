@@ -14,9 +14,9 @@ export const eventsData = [
     price: 45,
     category: "Wine Tasting",
     images: [
-      "https://i.pinimg.com/736x/16/2c/87/162c87b619a9761f33afeda1616c235f.jpg",
-      "https://i.pinimg.com/736x/8d/25/90/8d2590c9d5e8eaa35e33e5f5db8f5b8e.jpg",
-      "https://i.pinimg.com/736x/ab/12/34/ab123456789012345678901234567890.jpg"
+      "https://i.pinimg.com/736x/5d/09/49/5d0949ec57cd170a57ccdf0cec883adc.jpg",
+      "https://i.pinimg.com/736x/ad/10/14/ad101499e074b15d605d422b47b0f07e.jpg",
+      "https://i.pinimg.com/1200x/7c/0c/f2/7c0cf209dd721ee2910fca0d2dd948e3.jpg"
     ],
     shortDesc: "Experience the finest wines from Tuscany paired with authentic Italian appetizers.",
     fullDesc: "Join us for an exclusive evening celebrating the wines of Tuscany. Our sommelier will guide you through a selection of 6 premium wines, each paired with carefully chosen Italian appetizers. Learn about the history, terroir, and winemaking traditions of this iconic region.",
@@ -37,9 +37,9 @@ export const eventsData = [
     price: 65,
     category: "Cooking Class",
     images: [
-      "https://i.pinimg.com/736x/74/88/fe/7488fe51f334051a39bfefc0229205ae.jpg",
-      "https://i.pinimg.com/736x/2a/cd/ef/2acdef123456789012345678901234.jpg",
-      "https://i.pinimg.com/736x/5b/de/01/5bde01234567890123456789012345.jpg"
+      "https://i.pinimg.com/736x/40/a9/79/40a97975515355dbd31414342fad0551.jpg",
+      "https://i.pinimg.com/736x/71/36/eb/7136eb9da7a8994cf7e9a72fb14b8f2d.jpg",
+      "https://i.pinimg.com/1200x/16/37/51/163751e53c4f337b50b0eb9694181ef2.jpg"
     ],
     shortDesc: "Learn the art of handmade pasta from our Italian chef.",
     fullDesc: "Discover the secrets of authentic Italian pasta making in this hands-on masterclass. Our head chef will teach you how to make fresh pasta from scratch, including fettuccine, ravioli, and gnocchi. You'll learn traditional techniques passed down through generations and enjoy your creations at the end of class.",
@@ -61,9 +61,9 @@ export const eventsData = [
     price: 85,
     category: "Special Event",
     images: [
-      "https://i.pinimg.com/736x/c5/98/50/c59850de0769bca7dfc25d2133b287e9.jpg",
-      "https://i.pinimg.com/736x/3c/45/67/3c456789012345678901234567890123.jpg",
-      "https://i.pinimg.com/736x/8d/89/ab/8d89ab012345678901234567890123.jpg"
+      "https://i.pinimg.com/736x/b8/8a/e3/b88ae3d84b8e6ab6a9e48d1d7ec6ca03.jpg",
+      "https://i.pinimg.com/1200x/5d/14/91/5d1491a24c8196b0769937b00bd86e5d.jpg",
+      "https://i.pinimg.com/1200x/73/0a/a3/730aa3928989fc1eb7190b9c6d9696f2.jpg"
     ],
     shortDesc: "Celebrate Christmas Eve with a traditional Italian feast.",
     fullDesc: "Experience an authentic Italian Christmas celebration with our special 7-course feast. Enjoy traditional dishes like Feast of the Seven Fishes, homemade panettone, and regional specialties, all accompanied by live Italian music and a festive atmosphere.",
@@ -85,9 +85,9 @@ export const eventsData = [
     price: 120,
     category: "Exclusive Dining",
     images: [
-      "https://i.pinimg.com/736x/b2/55/88/b255882221116dea71f84377d4406b38.jpg",
-      "https://i.pinimg.com/736x/4d/56/78/4d567890123456789012345678901234.jpg",
-      "https://i.pinimg.com/736x/9e/01/23/9e012345678901234567890123456789.jpg"
+      "https://i.pinimg.com/736x/47/6f/03/476f03fc95aef01ed4d325a7a268b326.jpg",
+      "https://i.pinimg.com/1200x/c2/77/79/c27779e635f81dfb4e8616f2b6fd938e.jpg",
+      "https://i.pinimg.com/736x/08/31/ab/0831ab19fc584c959fd5f3c65295b9a4.jpg"
     ],
     shortDesc: "An exclusive evening featuring rare white truffles from Alba.",
     fullDesc: "Indulge in the luxury of white truffles in this exclusive dining experience. Each course of our specially crafted 5-course menu features fresh white truffles from Alba, Italy. Our chef will showcase the versatility of this prized ingredient in both traditional and innovative preparations.",
@@ -109,9 +109,9 @@ export const eventsData = [
     price: 35,
     category: "Special Event",
     images: [
-      "https://i.pinimg.com/736x/69/16/23/691623d9001418e653a58f2fa2517fd2.jpg",
-      "https://i.pinimg.com/736x/5e/67/89/5e678901234567890123456789012345.jpg",
-      "https://i.pinimg.com/736x/0f/12/34/0f123456789012345678901234567890.jpg"
+      "https://i.pinimg.com/1200x/2b/f1/a7/2bf1a72cfc7751189e7e53bdbbdcd1cb.jpg",
+      "https://i.pinimg.com/1200x/8b/51/e6/8b51e6e5b768cc4e0de632f50f12502e.jpg",
+      "https://i.pinimg.com/736x/f8/ad/7f/f8ad7f7e36cfd2862ef35f836bff33e5.jpg"
     ],
     shortDesc: "Explore the flavors of Italian street food from different regions.",
     fullDesc: "Take a culinary journey through Italy's streets with this casual and fun event. Sample authentic street food from various Italian regions, including arancini, supplì, porchetta sandwiches, and more. Enjoy a relaxed atmosphere with Italian music and aperitivo culture.",
@@ -133,9 +133,9 @@ export const eventsData = [
     price: 95,
     category: "Special Event",
     images: [
-      "https://i.pinimg.com/1200x/5c/6a/d4/5c6ad4d9a9440ca979884e8e3b17eaf2.jpg",
-      "https://i.pinimg.com/736x/6f/78/90/6f789012345678901234567890123456.jpg",
-      "https://i.pinimg.com/736x/1g/23/45/1g234567890123456789012345678901.jpg"
+      "https://i.pinimg.com/736x/f3/7e/e2/f37ee2e13dee690aeac94a13c20cb197.jpg",
+      "https://i.pinimg.com/1200x/69/04/2d/69042da0fa206eb5c96ddc1f50c4a541.jpg",
+      "https://i.pinimg.com/736x/7c/15/bf/7c15bfad4d44b1775ccc71cd2cf25899.jpg"
     ],
     shortDesc: "A romantic evening for two with exquisite Italian cuisine.",
     fullDesc: "Celebrate love with an unforgettable Valentine's dinner. Enjoy a specially curated 6-course tasting menu designed for two, featuring aphrodisiac ingredients and romantic Italian classics. The evening includes candlelight, rose petals, live violin music, and a complimentary photo to remember the night.",
@@ -222,7 +222,7 @@ export default function EventsPage() {
           </div>
         </section>
 
-        {/* Events Grid */}
+{/* Events Grid */}
         <section className="max-w-screen-xl mx-auto px-6 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredEvents.map((event, index) => (
@@ -317,6 +317,143 @@ export default function EventsPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+      {/* Divider Hero */}
+      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-12 flex flex-col items-center justify-center text-center bg-[#821F06] text-white">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+          NOTTE AZZURA
+        </h2>
+        <p className="mt-2 text-base italic text-[#E1D9CB] tracking-widest animate-fadeIn delay-200">
+          — mangiare bene è vivere bene —
+        </p>
+      </section>
+
+        <section className="bg-gradient-to-b from-[#E1D9CB] via-[#D4CABC] to-[#C9BFB1] py-16">
+          <div className="max-w-screen-xl mx-auto px-6">
+            {/* Social Media Promotion */}
+            <div className="mt-16 grid md:grid-cols-2 gap-6">
+              {/* Share & Get Discount */}
+              <div className="bg-gradient-to-br from-[#821F06] to-[#A52808] rounded-2xl p-8 text-white relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 transition-all duration-500 group-hover:scale-150"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12 transition-all duration-500 group-hover:scale-150"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="bg-white/20 p-3 rounded-full transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold">Share & Save</h3>
+                  </div>
+                  
+                  <p className="text-lg mb-6 leading-relaxed">
+                    Post your Savor experience on Instagram or TikTok and tag us to get <span className="font-bold text-2xl bg-white/20 px-2 py-1 rounded">15% OFF</span> your next event booking!
+                  </p>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
+                      <svg className="w-5 h-5 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span>Tag @savorsoho in your stories or posts</span>
+                    </div>
+                    <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
+                      <svg className="w-5 h-5 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span>Use hashtag #SavorMoments</span>
+                    </div>
+                    <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
+                      <svg className="w-5 h-5 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span>Show us your post for instant discount</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Referral Program */}
+              <div className="bg-gradient-to-br from-[#7D8D36] to-[#5A6428] rounded-2xl p-8 text-white relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 transition-all duration-500 group-hover:scale-150"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12 transition-all duration-500 group-hover:scale-150"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="bg-white/20 p-3 rounded-full transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold">Bring Friends</h3>
+                  </div>
+                  
+                  <p className="text-lg mb-6 leading-relaxed">
+                    Refer a friend and you both get <span className="font-bold text-2xl bg-white/20 px-2 py-1 rounded">£10 OFF</span> on your next event booking. The more friends, the more savings!
+                  </p>
+                  
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4 transition-all duration-300 hover:bg-white/20">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm opacity-90">Your Referral Code:</span>
+                      <button className="text-xs bg-white/20 hover:bg-white/40 px-3 py-1 rounded-full transition-all duration-300 hover:scale-105">
+                        Copy
+                      </button>
+                    </div>
+                    <div className="font-mono text-xl font-bold tracking-wider">
+                      SAVOR2024
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm opacity-90">
+                    Share your unique code with friends via WhatsApp, email, or social media!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Featured Benefits Bar */}
+            <div className="mt-12 bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="bg-[#821F06]/10 p-3 rounded-full flex-shrink-0 transition-all duration-300 group-hover:bg-[#821F06]/20 group-hover:scale-110">
+                    <svg className="w-6 h-6 text-[#821F06] transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                    </svg>
+                  </div>
+                  <div className="transition-transform duration-300 group-hover:translate-x-2">
+                    <h4 className="font-semibold text-[#821F06] mb-1">Birthday Special</h4>
+                    <p className="text-sm text-[#4A453E]">Celebrate with us and get a complimentary dessert on your special day!</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="bg-[#7D8D36]/10 p-3 rounded-full flex-shrink-0 transition-all duration-300 group-hover:bg-[#7D8D36]/20 group-hover:scale-110">
+                    <svg className="w-6 h-6 text-[#7D8D36] transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div className="transition-transform duration-300 group-hover:translate-x-2">
+                    <h4 className="font-semibold text-[#7D8D36] mb-1">Loyalty Rewards</h4>
+                    <p className="text-sm text-[#4A453E]">Attend 5 events and unlock VIP status with exclusive perks!</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="bg-[#821F06]/10 p-3 rounded-full flex-shrink-0 transition-all duration-300 group-hover:bg-[#821F06]/20 group-hover:scale-110">
+                    <svg className="w-6 h-6 text-[#821F06] transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                    </svg>
+                  </div>
+                  <div className="transition-transform duration-300 group-hover:translate-x-2">
+                    <h4 className="font-semibold text-[#821F06] mb-1">Early Bird Access</h4>
+                    <p className="text-sm text-[#4A453E]">Get notified 48 hours before public event announcements!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
