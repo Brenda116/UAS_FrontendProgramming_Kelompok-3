@@ -158,14 +158,12 @@ export default function EventsPage() {
   const [currentImageIndices, setCurrentImageIndices] = useState<{[key: string]: number}>({});
 
   useEffect(() => {
-    // Initialize image indices
     const indices: {[key: string]: number} = {};
     eventsData.forEach(event => {
       indices[event.id] = 0;
     });
     setCurrentImageIndices(indices);
 
-    // Setup image rotation for each event
     const interval = setInterval(() => {
       setCurrentImageIndices(prev => {
         const newIndices = { ...prev };

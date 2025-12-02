@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function ContactPage() {
-  // State declarations
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -18,7 +17,6 @@ export default function ContactPage() {
   const [currentEventImage, setCurrentEventImage] = useState(0);
   const [currentSocialIcon, setCurrentSocialIcon] = useState(0);
 
-  // Image and icon arrays
   const formImages = [
     "https://i.pinimg.com/1200x/5c/6a/d4/5c6ad4d9a9440ca979884e8e3b17eaf2.jpg",
     "https://i.pinimg.com/736x/b2/55/88/b255882221116dea71f84377d4406b38.jpg",
@@ -37,7 +35,6 @@ export default function ContactPage() {
     { name: "TikTok", path: "M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" },
   ];
 
-  // Effects
   useEffect(() => {
     setIsVisible(true);
 
@@ -60,7 +57,6 @@ export default function ContactPage() {
     };
   }, []);
 
-  // Event handlers
   const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -84,7 +80,6 @@ export default function ContactPage() {
     alert("Thank you for subscribing to our newsletter!");
   };
 
-  // Instagram posts data
   const instagramPosts = [
     {
       img: "https://i.pinimg.com/1200x/7d/b3/d6/7db3d6c9d49de1283718fdc2a63ed290.jpg",

@@ -16,7 +16,6 @@ export async function GET(
       return Response.json({ error: "Event not found" }, { status: 404 });
     }
 
-    // FIX UTAMA: pastikan images & highlights jadi array
     return Response.json({
       ...event,
       images: Array.isArray(event.images)

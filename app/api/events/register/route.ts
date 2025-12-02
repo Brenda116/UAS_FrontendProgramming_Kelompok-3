@@ -6,7 +6,6 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { eventId, name, email, phone, guests, message } = body;
 
-    // Validate required fields
     if (!eventId || !name || !email || !phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -14,7 +13,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Validate guests number
     const guestCount = Number(guests);
     if (isNaN(guestCount) || guestCount <= 0) {
       return NextResponse.json(
@@ -23,7 +21,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if event exists
     const event = await prisma.event.findUnique({
       where: { id: Number(eventId) }
     });
@@ -57,7 +54,6 @@ export async function POST(request: Request) {
       }
     });
 
-    // Update event registered count
     await prisma.event.update({
       where: { id: Number(eventId) },
       data: {

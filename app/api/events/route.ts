@@ -6,7 +6,6 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { eventId, name, email, phone, guests, message } = body;
 
-    // Validate required fields
     if (!eventId || !name || !email || !phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -14,7 +13,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if event exists and has capacity
     const event = await prisma.event.findUnique({
       where: { id: eventId }
     });
@@ -35,7 +33,6 @@ export async function POST(request: Request) {
     }
     const registrationMessage = message && message.trim() === '' ? null : message;
 
-    // Create registration
     const registration = await prisma.eventRegistration.create({
       data: {
         eventId,
@@ -47,7 +44,6 @@ export async function POST(request: Request) {
       }
     });
 
-    // Update event registered count
     await prisma.event.update({
       where: { id: eventId },
       data: {
