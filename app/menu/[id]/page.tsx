@@ -37,13 +37,53 @@ const StarRating = ({ rating, reviews }: { rating: number; reviews: number }) =>
 export default function MenuDetailPage() {
   const params = useParams();
   const [item, setItem] = useState<MenuItem | null>(null);
+  
+  const [isFavorite, setIsFavorite] = useState(false);
+  
+  const [showCopySuccess, setShowCopySuccess] = useState(false);
 
   useEffect(() => {
     if (params?.id) {
       const foundItem = menuData.find((p) => p.id === Number(params.id));
       setItem(foundItem || null);
+      
+      // favorite button  dari local storage
+      if (foundItem) {
+        const favorites = JSON.parse(localStorage.getItem('menuFavorites') || '[]');
+        setIsFavorite(favorites.includes(foundItem.id));
+      }
     }
   }, [params]);
+
+  // fav button dan sync ke local storage
+  const toggleFavorite = () => {
+    if (!item) return;
+    
+    const favorites = JSON.parse(localStorage.getItem('menuFavorites') || '[]');
+    let updatedFavorites;
+    
+    if (favorites.includes(item.id)) {
+      updatedFavorites = favorites.filter((id: number) => id !== item.id);
+      setIsFavorite(false);
+    } else {
+      updatedFavorites = [...favorites, item.id];
+      setIsFavorite(true);
+    }
+    
+    localStorage.setItem('menuFavorites', JSON.stringify(updatedFavorites));
+  };
+
+  // copy link function
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setShowCopySuccess(true);
+    setTimeout(() => setShowCopySuccess(false), 2000);
+  };
+
+  // related/similar items (dari kategori yang sama)
+  const relatedItems = item 
+    ? menuData.filter(i => i.category === item.category && i.id !== item.id).slice(0, 3)
+    : [];
 
   if (!item) {
     return (
@@ -80,6 +120,37 @@ export default function MenuDetailPage() {
                   PROMO
                </div>
             )}
+
+            <div className="absolute top-4 right-4 flex flex-col gap-2">
+              {/* fav button */}
+              <button
+                onClick={toggleFavorite}
+                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300"
+                title="Add to Favorites"
+              >
+                <span className={`text-2xl transition-all ${isFavorite ? 'text-red-500 scale-125' : 'text-gray-400'}`}>
+                  {isFavorite ? '❤️' : '🤍'}
+                </span>
+              </button>
+
+              {/* copy link button*/}
+              <div className="relative">
+                <button
+                  onClick={copyLink}
+                  className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300"
+                  title="Copy Link"
+                >
+                  <span className="text-xl">🔗</span>
+                </button>
+
+                {/* success notif */}
+                {showCopySuccess && (
+                  <div className="absolute top-14 right-0 bg-green-500 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg whitespace-nowrap animate-fadeIn">
+                    ✓ Link Copied!
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative">
@@ -96,7 +167,7 @@ export default function MenuDetailPage() {
 
             <StarRating rating={item.rating || 0} reviews={item.reviews || 0} />
 
-            <p className="text-2xl font-semibold text-[var(--green-dark)] mb-5">
+            <p className="text-3xl font-bold text-[var(--green-dark)] mb-5">
               Rp {item.price.toLocaleString('id-ID')}
             </p>
 
@@ -130,6 +201,49 @@ export default function MenuDetailPage() {
           </div>
 
         </div>
+
+        {/* You May Also Like section */}
+        {relatedItems.length > 0 && (
+          <div className="max-w-5xl mx-auto mt-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--red-dark)] mb-6 text-center">
+              You May Also Like
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedItems.map((relatedItem) => (
+                <Link 
+                  key={relatedItem.id} 
+                  href={`/menu/${relatedItem.id}`}
+                  className="group"
+                >
+                  <div className="bg-[var(--white)] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={relatedItem.imageUrl}
+                        alt={relatedItem.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      {relatedItem.isPromo && (
+                        <div className="absolute top-3 left-3 bg-[var(--red)] text-white px-2 py-1 rounded-full text-[9px] font-bold shadow-md animate-pulse">
+                          PROMO
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-4 text-center">
+                      <h3 className="text-lg font-bold text-[var(--red-dark)] mb-2 group-hover:text-[var(--gold)] transition-colors">
+                        {relatedItem.name}
+                      </h3>
+                      <p className="text-base font-semibold text-[var(--green-dark)]">
+                        Rp {relatedItem.price.toLocaleString('id-ID')}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
       </main>
 
       <Footer />
