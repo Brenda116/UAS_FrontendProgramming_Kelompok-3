@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { menuData } from '../data/menuData'; 
@@ -15,6 +15,12 @@ export default function MenuPage() {
   const [sortBy, setSortBy] = useState<'default' | 'price-low' | 'price-high' | 'name'>('default');
   
   const [favorites, setFavorites] = useState<number[]>([]);
+
+  // atur favorites dari local storage 
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem('menuFavorites') || '[]');
+    setFavorites(savedFavorites);
+  }, []);
 
   // Filter berdasarkan category
   let filteredItems = activeCategory === 'all' 
@@ -39,10 +45,14 @@ export default function MenuPage() {
     });
   }
 
+  // favorite button (sync ke local storage)
   const toggleFavorite = (id: number) => {
-    setFavorites(prev => 
-      prev.includes(id) ? prev.filter(fav => fav !== id) : [...prev, id]
-    );
+    const updatedFavorites = favorites.includes(id) 
+      ? favorites.filter(fav => fav !== id) 
+      : [...favorites, id];
+    
+    setFavorites(updatedFavorites);
+    localStorage.setItem('menuFavorites', JSON.stringify(updatedFavorites));
   };
 
   return (
