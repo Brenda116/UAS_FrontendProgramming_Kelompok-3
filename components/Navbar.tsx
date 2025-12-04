@@ -3,9 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        localStorage.removeItem("token");
+        document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        window.location.href = "/login";
+        router.push("/login");
+    };
 
     return (
         <main className="font-playfair bg-[var(--red)] fixed w-full z-1000 flex items-center justify-between px-6 py-4 shadow-md">
@@ -31,7 +40,9 @@ export default function Navbar() {
                 <Link href="/about">About</Link>
                 <Link href="/contactloc">Contact</Link>
                 <Link href="/faq">FAQ</Link>
-                <Link href="#">Logout</Link>
+                <button onClick={ handleLogout } className="cursor-pointer">
+                    Logout
+                </button>
             </nav>
         </main>
     );
