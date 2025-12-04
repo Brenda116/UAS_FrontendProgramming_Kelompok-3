@@ -32,9 +32,9 @@ async function main() {
       price: 45,
       category: "Wine Tasting",
       images: [
-        "https://i.pinimg.com/736x/16/2c/87/162c87b619a9761f33afeda1616c235f.jpg",
-        "https://i.pinimg.com/736x/8d/25/90/8d2590c9d5e8eaa35e33e5f5db8f5b8e.jpg",
-        "https://i.pinimg.com/736x/ab/12/34/ab123456789012345678901234567890.jpg"
+        "https://i.pinimg.com/736x/5d/09/49/5d0949ec57cd170a57ccdf0cec883adc.jpg",
+        "https://i.pinimg.com/736x/ad/10/14/ad101499e074b15d605d422b47b0f07e.jpg",
+        "https://i.pinimg.com/1200x/7c/0c/f2/7c0cf209dd721ee2910fca0d2dd948e3.jpg"
       ],
       shortDesc: "Experience the finest wines from Tuscany paired with authentic Italian appetizers.",
       fullDesc: "Join us for an exclusive evening celebrating the wines of Tuscany. Our sommelier will guide you through a selection of 6 premium wines, each paired with carefully chosen Italian appetizers. Learn about the history, terroir, and winemaking traditions of this iconic region.",
@@ -55,9 +55,9 @@ async function main() {
       price: 65,
       category: "Cooking Class",
       images: [
-        "https://i.pinimg.com/736x/74/88/fe/7488fe51f334051a39bfefc0229205ae.jpg",
-        "https://i.pinimg.com/736x/2a/cd/ef/2acdef123456789012345678901234.jpg",
-        "https://i.pinimg.com/736x/5b/de/01/5bde01234567890123456789012345.jpg"
+        "https://i.pinimg.com/736x/40/a9/79/40a97975515355dbd31414342fad0551.jpg",
+        "https://i.pinimg.com/736x/71/36/eb/7136eb9da7a8994cf7e9a72fb14b8f2d.jpg",
+        "https://i.pinimg.com/1200x/16/37/51/163751e53c4f337b50b0eb9694181ef2.jpg"
       ],
       shortDesc: "Learn the art of handmade pasta from our Italian chef.",
       fullDesc: "Discover the secrets of authentic Italian pasta making in this hands-on masterclass. Our head chef will teach you how to make fresh pasta from scratch, including fettuccine, ravioli, and gnocchi. You'll learn traditional techniques passed down through generations and enjoy your creations at the end of class.",
@@ -79,9 +79,9 @@ async function main() {
       price: 85,
       category: "Special Event",
       images: [
-        "https://i.pinimg.com/736x/c5/98/50/c59850de0769bca7dfc25d2133b287e9.jpg",
-        "https://i.pinimg.com/736x/3c/45/67/3c456789012345678901234567890123.jpg",
-        "https://i.pinimg.com/736x/8d/89/ab/8d89ab012345678901234567890123.jpg"
+        "https://i.pinimg.com/736x/b8/8a/e3/b88ae3d84b8e6ab6a9e48d1d7ec6ca03.jpg",
+        "https://i.pinimg.com/1200x/5d/14/91/5d1491a24c8196b0769937b00bd86e5d.jpg",
+        "https://i.pinimg.com/1200x/73/0a/a3/730aa3928989fc1eb7190b9c6d9696f2.jpg"
       ],
       shortDesc: "Celebrate Christmas Eve with a traditional Italian feast.",
       fullDesc: "Experience an authentic Italian Christmas celebration with our special 7-course feast. Enjoy traditional dishes like Feast of the Seven Fishes, homemade panettone, and regional specialties, all accompanied by live Italian music and a festive atmosphere.",
@@ -103,9 +103,9 @@ async function main() {
       price: 120,
       category: "Exclusive Dining",
       images: [
-        "https://i.pinimg.com/736x/b2/55/88/b255882221116dea71f84377d4406b38.jpg",
-        "https://i.pinimg.com/736x/4d/56/78/4d567890123456789012345678901234.jpg",
-        "https://i.pinimg.com/736x/9e/01/23/9e012345678901234567890123456789.jpg"
+        "https://i.pinimg.com/736x/47/6f/03/476f03fc95aef01ed4d325a7a268b326.jpg",
+        "https://i.pinimg.com/1200x/c2/77/79/c27779e635f81dfb4e8616f2b6fd938e.jpg",
+        "https://i.pinimg.com/736x/08/31/ab/0831ab19fc584c959fd5f3c65295b9a4.jpg"
       ],
       shortDesc: "An exclusive evening featuring rare white truffles from Alba.",
       fullDesc: "Indulge in the luxury of white truffles in this exclusive dining experience. Each course of our specially crafted 5-course menu features fresh white truffles from Alba, Italy. Our chef will showcase the versatility of this prized ingredient in both traditional and innovative preparations.",
@@ -127,9 +127,9 @@ async function main() {
       price: 35,
       category: "Special Event",
       images: [
-        "https://i.pinimg.com/736x/69/16/23/691623d9001418e653a58f2fa2517fd2.jpg",
-        "https://i.pinimg.com/736x/5e/67/89/5e678901234567890123456789012345.jpg",
-        "https://i.pinimg.com/736x/0f/12/34/0f123456789012345678901234567890.jpg"
+        "https://i.pinimg.com/1200x/2b/f1/a7/2bf1a72cfc7751189e7e53bdbbdcd1cb.jpg",
+        "https://i.pinimg.com/1200x/8b/51/e6/8b51e6e5b768cc4e0de632f50f12502e.jpg",
+        "https://i.pinimg.com/736x/f8/ad/7f/f8ad7f7e36cfd2862ef35f836bff33e5.jpg"
       ],
       shortDesc: "Explore the flavors of Italian street food from different regions.",
       fullDesc: "Take a culinary journey through Italy's streets with this casual and fun event. Sample authentic street food from various Italian regions, including arancini, supplì, porchetta sandwiches, and more. Enjoy a relaxed atmosphere with Italian music and aperitivo culture.",
@@ -151,9 +151,9 @@ async function main() {
       price: 95,
       category: "Special Event",
       images: [
-        "https://i.pinimg.com/1200x/5c/6a/d4/5c6ad4d9a9440ca979884e8e3b17eaf2.jpg",
-        "https://i.pinimg.com/736x/6f/78/90/6f789012345678901234567890123456.jpg",
-        "https://i.pinimg.com/736x/1g/23/45/1g234567890123456789012345678901.jpg"
+        "https://i.pinimg.com/736x/f3/7e/e2/f37ee2e13dee690aeac94a13c20cb197.jpg",
+        "https://i.pinimg.com/1200x/69/04/2d/69042da0fa206eb5c96ddc1f50c4a541.jpg",
+        "https://i.pinimg.com/736x/7c/15/bf/7c15bfad4d44b1775ccc71cd2cf25899.jpg"
       ],
       shortDesc: "A romantic evening for two with exquisite Italian cuisine.",
       fullDesc: "Celebrate love with an unforgettable Valentine's dinner. Enjoy a specially curated 6-course tasting menu designed for two, featuring aphrodisiac ingredients and romantic Italian classics. The evening includes candlelight, rose petals, live violin music, and a complimentary photo to remember the night.",

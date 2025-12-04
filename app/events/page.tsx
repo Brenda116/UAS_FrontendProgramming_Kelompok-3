@@ -5,183 +5,123 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const eventsData = [
-  {
-    id: "wine-tasting-tuscany",
-    title: "Wine Tasting: Flavors of Tuscany",
-    date: "2024-12-15",
-    time: "19:00 - 22:00",
-    price: 45,
-    category: "Wine Tasting",
-    images: [
-      "https://i.pinimg.com/736x/5d/09/49/5d0949ec57cd170a57ccdf0cec883adc.jpg",
-      "https://i.pinimg.com/736x/ad/10/14/ad101499e074b15d605d422b47b0f07e.jpg",
-      "https://i.pinimg.com/1200x/7c/0c/f2/7c0cf209dd721ee2910fca0d2dd948e3.jpg"
-    ],
-    shortDesc: "Experience the finest wines from Tuscany paired with authentic Italian appetizers.",
-    fullDesc: "Join us for an exclusive evening celebrating the wines of Tuscany. Our sommelier will guide you through a selection of 6 premium wines, each paired with carefully chosen Italian appetizers. Learn about the history, terroir, and winemaking traditions of this iconic region.",
-    highlights: [
-      "6 premium Tuscan wines",
-      "Authentic Italian appetizer pairings",
-      "Expert sommelier guidance",
-      "Wine region history & education"
-    ],
-    capacity: 30,
-    registered: 18
-  },
-  {
-    id: "pasta-making-masterclass",
-    title: "Pasta Making Masterclass",
-    date: "2024-12-20",
-    time: "14:00 - 17:00",
-    price: 65,
-    category: "Cooking Class",
-    images: [
-      "https://i.pinimg.com/736x/40/a9/79/40a97975515355dbd31414342fad0551.jpg",
-      "https://i.pinimg.com/736x/71/36/eb/7136eb9da7a8994cf7e9a72fb14b8f2d.jpg",
-      "https://i.pinimg.com/1200x/16/37/51/163751e53c4f337b50b0eb9694181ef2.jpg"
-    ],
-    shortDesc: "Learn the art of handmade pasta from our Italian chef.",
-    fullDesc: "Discover the secrets of authentic Italian pasta making in this hands-on masterclass. Our head chef will teach you how to make fresh pasta from scratch, including fettuccine, ravioli, and gnocchi. You'll learn traditional techniques passed down through generations and enjoy your creations at the end of class.",
-    highlights: [
-      "Hands-on pasta making experience",
-      "Learn 3 different pasta types",
-      "Traditional Italian techniques",
-      "Take home your creations",
-      "Complimentary wine included"
-    ],
-    capacity: 20,
-    registered: 15
-  },
-  {
-    id: "christmas-feast",
-    title: "Christmas Italian Feast",
-    date: "2024-12-24",
-    time: "18:00 - 23:00",
-    price: 85,
-    category: "Special Event",
-    images: [
-      "https://i.pinimg.com/736x/b8/8a/e3/b88ae3d84b8e6ab6a9e48d1d7ec6ca03.jpg",
-      "https://i.pinimg.com/1200x/5d/14/91/5d1491a24c8196b0769937b00bd86e5d.jpg",
-      "https://i.pinimg.com/1200x/73/0a/a3/730aa3928989fc1eb7190b9c6d9696f2.jpg"
-    ],
-    shortDesc: "Celebrate Christmas Eve with a traditional Italian feast.",
-    fullDesc: "Experience an authentic Italian Christmas celebration with our special 7-course feast. Enjoy traditional dishes like Feast of the Seven Fishes, homemade panettone, and regional specialties, all accompanied by live Italian music and a festive atmosphere.",
-    highlights: [
-      "7-course traditional Italian menu",
-      "Live Italian music performance",
-      "Festive decorations & atmosphere",
-      "Complimentary prosecco welcome drink",
-      "Special Christmas dessert selection"
-    ],
-    capacity: 50,
-    registered: 42
-  },
-  {
-    id: "truffle-dinner",
-    title: "White Truffle Dinner Experience",
-    date: "2025-01-10",
-    time: "19:30 - 22:30",
-    price: 120,
-    category: "Exclusive Dining",
-    images: [
-      "https://i.pinimg.com/736x/47/6f/03/476f03fc95aef01ed4d325a7a268b326.jpg",
-      "https://i.pinimg.com/1200x/c2/77/79/c27779e635f81dfb4e8616f2b6fd938e.jpg",
-      "https://i.pinimg.com/736x/08/31/ab/0831ab19fc584c959fd5f3c65295b9a4.jpg"
-    ],
-    shortDesc: "An exclusive evening featuring rare white truffles from Alba.",
-    fullDesc: "Indulge in the luxury of white truffles in this exclusive dining experience. Each course of our specially crafted 5-course menu features fresh white truffles from Alba, Italy. Our chef will showcase the versatility of this prized ingredient in both traditional and innovative preparations.",
-    highlights: [
-      "5-course truffle-focused menu",
-      "Fresh white truffles from Alba",
-      "Wine pairing included",
-      "Limited to 25 guests",
-      "Meet the chef experience"
-    ],
-    capacity: 25,
-    registered: 20
-  },
-  {
-    id: "italian-street-food",
-    title: "Italian Street Food Night",
-    date: "2025-01-18",
-    time: "18:00 - 22:00",
-    price: 35,
-    category: "Special Event",
-    images: [
-      "https://i.pinimg.com/1200x/2b/f1/a7/2bf1a72cfc7751189e7e53bdbbdcd1cb.jpg",
-      "https://i.pinimg.com/1200x/8b/51/e6/8b51e6e5b768cc4e0de632f50f12502e.jpg",
-      "https://i.pinimg.com/736x/f8/ad/7f/f8ad7f7e36cfd2862ef35f836bff33e5.jpg"
-    ],
-    shortDesc: "Explore the flavors of Italian street food from different regions.",
-    fullDesc: "Take a culinary journey through Italy's streets with this casual and fun event. Sample authentic street food from various Italian regions, including arancini, supplì, porchetta sandwiches, and more. Enjoy a relaxed atmosphere with Italian music and aperitivo culture.",
-    highlights: [
-      "Unlimited street food tastings",
-      "10+ different regional specialties",
-      "Italian craft beer selection",
-      "Live DJ with Italian music",
-      "Casual, social atmosphere"
-    ],
-    capacity: 60,
-    registered: 25
-  },
-  {
-    id: "valentines-dinner",
-    title: "Valentine's Day Romance",
-    date: "2025-02-14",
-    time: "19:00 - 23:00",
-    price: 95,
-    category: "Special Event",
-    images: [
-      "https://i.pinimg.com/736x/f3/7e/e2/f37ee2e13dee690aeac94a13c20cb197.jpg",
-      "https://i.pinimg.com/1200x/69/04/2d/69042da0fa206eb5c96ddc1f50c4a541.jpg",
-      "https://i.pinimg.com/736x/7c/15/bf/7c15bfad4d44b1775ccc71cd2cf25899.jpg"
-    ],
-    shortDesc: "A romantic evening for two with exquisite Italian cuisine.",
-    fullDesc: "Celebrate love with an unforgettable Valentine's dinner. Enjoy a specially curated 6-course tasting menu designed for two, featuring aphrodisiac ingredients and romantic Italian classics. The evening includes candlelight, rose petals, live violin music, and a complimentary photo to remember the night.",
-    highlights: [
-      "6-course romantic tasting menu",
-      "Complimentary champagne toast",
-      "Live violin performance",
-      "Candlelit ambiance",
-      "Professional couple's photo",
-      "Rose & chocolate gifts"
-    ],
-    capacity: 40,
-    registered: 38
-  }
-];
+interface Event {
+  id: number;
+  slug: string;
+  title: string;
+  date: string;
+  time: string;
+  price: number;
+  category: string;
+  images: string[];
+  highlights: string[];
+  shortDesc: string;
+  fullDesc: string;
+  capacity: number;
+  registered: number;
+}
 
 export default function EventsPage() {
   const router = useRouter();
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentImageIndices, setCurrentImageIndices] = useState<{[key: string]: number}>({});
 
+  // Fetch events from API
   useEffect(() => {
-    const indices: {[key: string]: number} = {};
-    eventsData.forEach(event => {
-      indices[event.id] = 0;
-    });
-    setCurrentImageIndices(indices);
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/events');
+        const data = await response.json();
+        
+        if (data.success && data.events) {
+          setEvents(data.events);
+          
+          // Initialize image indices
+          const indices: {[key: string]: number} = {};
+          data.events.forEach((event: Event) => {
+            indices[event.slug] = 0;
+          });
+          setCurrentImageIndices(indices);
+        } else {
+          setError("Failed to load events");
+        }
+      } catch (err) {
+        console.error("Error fetching events:", err);
+        setError("Failed to load events");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  // Image slider effect
+  useEffect(() => {
+    if (events.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentImageIndices(prev => {
         const newIndices = { ...prev };
-        eventsData.forEach(event => {
-          newIndices[event.id] = (prev[event.id] + 1) % event.images.length;
+        events.forEach(event => {
+          const images = Array.isArray(event.images) ? event.images : [];
+          if (images.length > 0) {
+            newIndices[event.slug] = (prev[event.slug] + 1) % images.length;
+          }
         });
         return newIndices;
       });
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [events]);
 
-  const categories = ["All", "Wine Tasting", "Cooking Class", "Special Event", "Exclusive Dining"];
+  // Get unique categories from events
+  const categories = ["All", ...Array.from(new Set(events.map(event => event.category)))];
   
   const filteredEvents = selectedCategory === "All" 
-    ? eventsData 
-    : eventsData.filter(event => event.category === selectedCategory);
+    ? events 
+    : events.filter(event => event.category === selectedCategory);
+
+  if (loading) {
+    return (
+      <>
+        <Navbar />
+        <main className="bg-[#E1D9CB] text-[#821F06] min-h-screen font-serif">
+          <div className="pt-16 md:pt-20">
+            <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-gradient-to-b from-[#821F06] to-[#E1D9CB] text-white">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto"></div>
+                <p className="mt-4 text-lg">Loading events...</p>
+              </div>
+            </section>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  if (error) {
+    return (
+      <>
+        <Navbar />
+        <main className="bg-[#E1D9CB] text-[#821F06] min-h-screen font-serif">
+          <div className="pt-16 md:pt-20">
+            <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-gradient-to-b from-[#821F06] to-[#E1D9CB] text-white">
+              <div className="text-center">
+                <p className="text-lg">{error}</p>
+              </div>
+            </section>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -220,114 +160,136 @@ export default function EventsPage() {
           </div>
         </section>
 
-{/* Events Grid */}
+        {/* Events Grid */}
         <section className="max-w-screen-xl mx-auto px-6 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredEvents.map((event, index) => (
-              <div
-                key={event.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer animate-fadeIn"
-                style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => router.push(`/events/${event.id}`)}
-              >
-                {/* Image Slider */}
-                <div className="h-48 overflow-hidden relative">
-                  {event.images.map((img, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={img}
-                      alt={`${event.title} ${imgIndex + 1}`}
-                      className={`w-full h-full object-cover absolute top-0 left-0 transition-all duration-1000 ${
-                        imgIndex === (currentImageIndices[event.id] || 0)
-                          ? 'opacity-100 scale-100'
-                          : 'opacity-0 scale-110'
-                      }`}
-                    />
-                  ))}
-                  
-                  {/* Image Indicators */}
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5 z-10">
-                    {event.images.map((_, imgIndex) => (
-                      <div
-                        key={imgIndex}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          imgIndex === (currentImageIndices[event.id] || 0)
-                            ? 'bg-white w-6'
-                            : 'bg-white/50'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
+          {filteredEvents.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-xl text-[#4A453E]">No events found in this category.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredEvents.map((event, index) => {
+                const images = Array.isArray(event.images) ? event.images : [];
+                const currentImageIndex = currentImageIndices[event.slug] || 0;
                 
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs bg-[#7D8D36] text-white px-3 py-1 rounded-full">
-                      {event.category}
-                    </span>
-                    <span className="text-[#821F06] font-bold text-lg">
-                      £{event.price}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-[#821F06] mb-2">
-                    {event.title}
-                  </h3>
-
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-[#4A453E]">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      {new Date(event.date).toLocaleDateString('en-GB', { 
-                        day: 'numeric', 
-                        month: 'long', 
-                        year: 'numeric' 
-                      })}
+                return (
+                  <div
+                    key={event.id}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer animate-fadeIn"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                    onClick={() => router.push(`/events/${event.slug}`)}
+                  >
+                    {/* Image Slider */}
+                    <div className="h-48 overflow-hidden relative bg-gray-200">
+                      {images.length > 0 ? (
+                        <>
+                          {images.map((img, imgIndex) => (
+                            <img
+                              key={imgIndex}
+                              src={img}
+                              alt={`${event.title} ${imgIndex + 1}`}
+                              className={`w-full h-full object-cover absolute top-0 left-0 transition-all duration-1000 ${
+                                imgIndex === currentImageIndex
+                                  ? 'opacity-100 scale-100'
+                                  : 'opacity-0 scale-110'
+                              }`}
+                            />
+                          ))}
+                          
+                          {/* Image Indicators */}
+                          {images.length > 1 && (
+                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5 z-10">
+                              {images.map((_, imgIndex) => (
+                                <div
+                                  key={imgIndex}
+                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    imgIndex === currentImageIndex
+                                      ? 'bg-white w-6'
+                                      : 'bg-white/50'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-gray-400">
+                          No Image
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center text-sm text-[#4A453E]">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {event.time}
+                    
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs bg-[#7D8D36] text-white px-3 py-1 rounded-full">
+                          {event.category}
+                        </span>
+                        <span className="text-[#821F06] font-bold text-lg">
+                          £{event.price}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-semibold text-[#821F06] mb-2">
+                        {event.title}
+                      </h3>
+
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center text-sm text-[#4A453E]">
+                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          {new Date(event.date).toLocaleDateString('en-GB', { 
+                            day: 'numeric', 
+                            month: 'long', 
+                            year: 'numeric' 
+                          })}
+                        </div>
+                        <div className="flex items-center text-sm text-[#4A453E]">
+                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {event.time}
+                        </div>
+                      </div>
+
+                      <p className="text-sm text-[#4A453E] mb-4 line-clamp-2">
+                        {event.shortDesc}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="text-xs text-[#8A837A]">
+                          {event.registered}/{event.capacity} registered
+                        </div>
+                        <button className="text-[#821F06] font-semibold text-sm hover:text-[#7D8D36] transition-colors">
+                          View Details →
+                        </button>
+                      </div>
+
+                      <div className="mt-3 w-full bg-[#E1D9CB] rounded-full h-2">
+                        <div 
+                          className="bg-[#7D8D36] h-2 rounded-full transition-all duration-500"
+                          style={{ width: `${(event.registered / event.capacity) * 100}%` }}
+                        ></div>
+                      </div>
                     </div>
                   </div>
-
-                  <p className="text-sm text-[#4A453E] mb-4 line-clamp-2">
-                    {event.shortDesc}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="text-xs text-[#8A837A]">
-                      {event.registered}/{event.capacity} registered
-                    </div>
-                    <button className="text-[#821F06] font-semibold text-sm hover:text-[#7D8D36] transition-colors">
-                      View Details →
-                    </button>
-                  </div>
-
-                  <div className="mt-3 w-full bg-[#E1D9CB] rounded-full h-2">
-                    <div 
-                      className="bg-[#7D8D36] h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${(event.registered / event.capacity) * 100}%` }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </section>
 
-      {/* Divider Hero */}
-      <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-12 flex flex-col items-center justify-center text-center bg-[#821F06] text-white">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
-          NOTTE AZZURA
-        </h2>
-        <p className="mt-2 text-base italic text-[#E1D9CB] tracking-widest animate-fadeIn delay-200">
-          — mangiare bene è vivere bene —
-        </p>
-      </section>
+        {/* Divider Hero */}
+        <section className="relative w-full h-[35vh] md:h-[50vh] mx-auto mt-12 flex flex-col items-center justify-center text-center bg-[#821F06] text-white">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-widest animate-fadeIn">
+            NOTTE AZZURA
+          </h2>
+          <p className="mt-2 text-base italic text-[#E1D9CB] tracking-widest animate-fadeIn delay-200">
+            — mangiare bene è vivere bene —
+          </p>
+        </section>
 
+        {/* Social Media & Benefits Section */}
         <section className="bg-gradient-to-b from-[#E1D9CB] via-[#D4CABC] to-[#C9BFB1] py-16">
           <div className="max-w-screen-xl mx-auto px-6">
             {/* Social Media Promotion */}
