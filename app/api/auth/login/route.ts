@@ -8,12 +8,12 @@ export async function POST(request: Request) {
 
   const user = await prisma.user.findUnique({ where: { email } });
   if (!user) {
-    return NextResponse.json({ error: "Email tidak ditemukan" }, { status: 404 });
+    return NextResponse.json({ error: "Email not found" }, { status: 404 });
   }
 
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
-    return NextResponse.json({ error: "Password salah" }, { status: 401 });
+    return NextResponse.json({ error: "Incorrect email or password" }, { status: 401 });
   }
 
   const token = signToken({
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json({
-    message: "Login berhasil",
+    message: "Login successful!",
     token,
   });
 }
