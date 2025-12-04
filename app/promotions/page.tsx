@@ -50,6 +50,22 @@ export default function PromotionsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[var(--cream)] font-playfair">
       <Navbar />
+      
+      <div className="fixed top-35 left-6 z-50 flex flex-col gap-3">
+        <Link href="/">
+          <button className="flex items-center gap-2 bg-[var(--white)] hover:bg-[var(--red-dark)] text-[var(--red-dark)] hover:text-[var(--white)] font-bold text-sm px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-[var(--red-dark)]">
+            <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span>
+            <span>Home</span>
+          </button>
+        </Link>
+        <Link href="/menu">
+          <button className="flex items-center gap-2 bg-[var(--white)] hover:bg-[var(--gold)] text-[var(--red-dark)] hover:text-[var(--red-dark)] font-bold text-sm px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-[var(--gold)]">
+            <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span>
+            <span>Menu</span>
+          </button>
+        </Link>
+      </div>
+
       <main className="flex-grow pb-20">
         
         <section className="relative min-h-[65vh] flex items-center justify-center text-[var(--white)] pt-32 overflow-hidden">
@@ -73,15 +89,6 @@ export default function PromotionsPage() {
               From special menu prices to exclusive vouchers, find all our best offers here.
             </p>
           </div>
-        </section>
-
-        <section className="max-w-7xl mx-auto px-6 mt-10">
-            <Link href="/menu">
-                <button className="group flex items-center gap-2 text-[var(--red-dark)] font-bold text-base hover:text-[var(--red)] transition-colors mb-4">
-                    <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span>
-                    <span>Menu</span>
-                </button>
-            </Link>
         </section>
 
         <section className="max-w-7xl mx-auto px-6 mt-10">
