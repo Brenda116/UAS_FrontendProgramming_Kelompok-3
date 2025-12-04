@@ -75,7 +75,7 @@ export default function MenuPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--red-dark)]/100 via-[var(--red-dark)]/50 to-[var(--black)]/80" />          
           
           <div className="relative z-10 text-center px-4 -mt-10">
-            <span className="block text-[var(--green)] text-sm md:text-base font-bold tracking-[0.4em] uppercase mb-4 animate-fadeIn">
+            <span className="block text-[var(--green)] text-sm md:text-base font-bold tracking-[0.4em] uppercase mb-1 animate-fadeIn">
               Taste The Tradition
             </span>
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-4 animate-fadeIn drop-shadow-2xl">
