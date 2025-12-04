@@ -183,7 +183,7 @@ export default function MenuDetailPage() {
               <Link href="/menu">
                 <button className="group flex items-center gap-2 text-[var(--red-dark)] font-bold text-base hover:text-[var(--red)] transition-colors">
                   <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span> 
-                  Back to Menu
+                  Menu
                 </button>
               </Link>
 
