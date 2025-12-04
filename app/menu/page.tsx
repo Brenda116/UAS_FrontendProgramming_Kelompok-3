@@ -60,6 +60,14 @@ export default function MenuPage() {
       
       <Navbar />
 
+      {/* floating home button */}
+      <Link href="/">
+        <button className="fixed top-35 left-6 z-50 flex items-center gap-2 bg-[var(--white)] hover:bg-[var(--red-dark)] text-[var(--red-dark)] hover:text-[var(--white)] font-bold text-sm px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-[var(--red-dark)]">
+          <span className="group-hover:-translate-x-1 transition-transform duration-300">←</span>
+          <span>Home</span>
+        </button>
+      </Link>
+
       <main className="flex-grow pb-24">
         
         {/* HERO SECTION*/}
