@@ -29,7 +29,7 @@ export default function Navbar() {
                 <Link href="/menu">Menu</Link>
                 <Link href="/services">Services</Link>
                 <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
+                <Link href="/contactloc">Contact</Link>
                 <Link href="/faq">FAQ</Link>
                 <Link href="#">Logout</Link>
             </nav>
