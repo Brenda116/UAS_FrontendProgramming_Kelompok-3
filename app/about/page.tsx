@@ -73,8 +73,8 @@ export default function AboutPage() {
 
           {/* Text 01 */}
           <div className="space-y-3 md:text-lg leading-relaxed text-[var(--gray-dark)] max-w-md text-justify transition-opacity duration-500 group-hover:opacity-0">
-            <p className="text-sm text-[var(--green)] italic uppercase tracking-widest animate-fadeIn">
-              — A Chronicle of Taste, Time, and Tradition —
+            <p className="text-sm md:text-sm text-[var(--green)] italic uppercase tracking-widest animate-fadeIn">
+              — Chronicle of Taste, Time, and Tradition —
             </p>
             <p className="animate-fadeIn text-sm">
               At <span className="italic font-semibold">Notte Azzura</span>, every dish begins with a story —
